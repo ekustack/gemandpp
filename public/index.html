@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Posting points</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=currency_exchange" />
+    <script src="https://www.paypal.com/sdk/js?client-id=AUYImzUl0FHdsC8uAfkj8PBAfrUFd5eNOBf3ykI2a1RBd1liLtbGb6yGCGAP0GJi6M_Z4lbY5NpiHJc_&currency=USD" ></script>
+
+  </head>
+<body>
+  <section class="head">
+    <div class="prof">
+      <button class="prof-img"><svg viewBox="0 0 384 512" width="20" title="award" fill="#47f">
+  <path d="M97.12 362.63c-8.69-8.69-4.16-6.24-25.12-11.85-9.51-2.55-17.87-7.45-25.43-13.32L1.2 448.7c-4.39 10.77 3.81 22.47 15.43 22.03l52.69-2.01L105.56 507c8 8.44 22.04 5.81 26.43-4.96l52.05-127.62c-10.84 6.04-22.87 9.58-35.31 9.58-19.5 0-37.82-7.59-51.61-21.37zM382.8 448.7l-45.37-111.24c-7.56 5.88-15.92 10.77-25.43 13.32-21.07 5.64-16.45 3.18-25.12 11.85-13.79 13.78-32.12 21.37-51.62 21.37-12.44 0-24.47-3.55-35.31-9.58L252 502.04c4.39 10.77 18.44 13.4 26.43 4.96l36.25-38.28 52.69 2.01c11.62.44 19.82-11.27 15.43-22.03zM263 340c15.28-15.55 17.03-14.21 38.79-20.14 13.89-3.79 24.75-14.84 28.47-28.98 7.48-28.4 5.54-24.97 25.95-45.75 10.17-10.35 14.14-25.44 10.42-39.58-7.47-28.38-7.48-24.42 0-52.83 3.72-14.14-.25-29.23-10.42-39.58-20.41-20.78-18.47-17.36-25.95-45.75-3.72-14.14-14.58-25.19-28.47-28.98-27.88-7.61-24.52-5.62-44.95-26.41-10.17-10.35-25-14.4-38.89-10.61-27.87 7.6-23.98 7.61-51.9 0-13.89-3.79-28.72.25-38.89 10.61-20.41 20.78-17.05 18.8-44.94 26.41-13.89 3.79-24.75 14.84-28.47 28.98-7.47 28.39-5.54 24.97-25.95 45.75-10.17 10.35-14.15 25.44-10.42 39.58 7.47 28.36 7.48 24.4 0 52.82-3.72 14.14.25 29.23 10.42 39.59 20.41 20.78 18.47 17.35 25.95 45.75 3.72 14.14 14.58 25.19 28.47 28.98C104.6 325.96 106.27 325 121 340c13.23 13.47 33.84 15.88 49.74 5.82a39.676 39.676 0 0 1 42.53 0c15.89 10.06 36.5 7.65 49.73-5.82zM97.66 175.96c0-53.03 42.24-96.02 94.34-96.02s94.34 42.99 94.34 96.02-42.24 96.02-94.34 96.02-94.34-42.99-94.34-96.02z" />
+</svg></button>
+      <b class="prof-name">TeamPP <svg viewBox="0 0 512 512" width="17" title="check-circle" fill="#0f6">
+  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" /></b>
+    </div>
+  </section>
+  <input class="menu-tag" type="checkbox" id="menu-tag" hidden>
+    <label for="menu-tag" class="menu-btn">☰</label>
+    <div class="side-menu">
+    <ul>
+      <a href="."><li>HOME</li></a>
+      <a><li onclick="document.querySelector('.gm-claim').style.display='block';">ACCOUNT</li></a>
+      <a href="/enter.html"><li>LOGIN</li></a>
+    </ul>
+    </div>
+  <section class="re-user">
+    <div class="re-user-card">
+      <button class="re-user-img"> U</button> <b class="re-user-name">UserName</b>
+      <div class="re-card">
+        <h2 class="re-ammt pp" onclick="document.querySelector('.gm-claim').style.display='block';"><span class="icon pp"><svg viewBox="0 0 512 512" width="24" title="coins" fill="#eed">
+  <path d="M0 405.3V448c0 35.3 86 64 192 64s192-28.7 192-64v-42.7C342.7 434.4 267.2 448 192 448S41.3 434.4 0 405.3zM320 128c106 0 192-28.7 192-64S426 0 320 0 128 28.7 128 64s86 64 192 64zM0 300.4V352c0 35.3 86 64 192 64s192-28.7 192-64v-51.6c-41.3 34-116.9 51.6-192 51.6S41.3 334.4 0 300.4zm416 11c57.3-11.1 96-31.7 96-55.4v-42.7c-23.2 16.4-57.3 27.6-96 34.5v63.6zM192 160C86 160 0 195.8 0 240s86 80 192 80 192-35.8 192-80-86-80-192-80zm219.3 56.3c60-10.8 100.7-32 100.7-56.3v-42.7c-35.5 25.1-96.5 38.6-160.7 41.8 29.5 14.3 51.2 33.5 60 57.2z" /></svg></span> <span class="pp-count">5</span>PP &nbsp; &nbsp;<span class="material-symbols-outlined c-ex"> currency_exchange </span></h2>
+        <h2 class="re-ammt gm"><span class="gm-count">0</span>GM</h2>
+        <h3>Rewards</h3>
+        <h2>
+          <a href="#buygm"><span class="gem"><svg viewBox="0 0 576 512" width="40" title="gem" fill="#0f7">
+  <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z" /></svg></span></a> <b>0</b> &nbsp; &nbsp; <span class="gift"><svg viewBox="0 0 512 512" width="40" title="gift" fill="#0f6">
+  <path d="M32 448c0 17.7 14.3 32 32 32h160V320H32v128zm256 32h160c17.7 0 32-14.3 32-32V320H288v160zm192-320h-42.1c6.2-12.1 10.1-25.5 10.1-40 0-48.5-39.5-88-88-88-41.6 0-68.5 21.3-103 68.3-34.5-47-61.4-68.3-103-68.3-48.5 0-88 39.5-88 88 0 14.5 3.8 27.9 10.1 40H32c-17.7 0-32 14.3-32 32v80c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16v-80c0-17.7-14.3-32-32-32zm-326.1 0c-22.1 0-40-17.9-40-40s17.9-40 40-40c19.9 0 34.6 3.3 86.1 80h-86.1zm206.1 0h-86.1c51.4-76.5 65.7-80 86.1-80 22.1 0 40 17.9 40 40s-17.9 40-40 40z" />
+</svg></span><span class="gift-count">0</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+<section class="part-par">
+<div class="part-1">
+  <button class="get">Get</button>
+  <h2><svg viewBox="0 0 512 512" width="50" title="coins" fill="#eed">
+  <path d="M0 405.3V448c0 35.3 86 64 192 64s192-28.7 192-64v-42.7C342.7 434.4 267.2 448 192 448S41.3 434.4 0 405.3zM320 128c106 0 192-28.7 192-64S426 0 320 0 128 28.7 128 64s86 64 192 64zM0 300.4V352c0 35.3 86 64 192 64s192-28.7 192-64v-51.6c-41.3 34-116.9 51.6-192 51.6S41.3 334.4 0 300.4zm416 11c57.3-11.1 96-31.7 96-55.4v-42.7c-23.2 16.4-57.3 27.6-96 34.5v63.6zM192 160C86 160 0 195.8 0 240s86 80 192 80 192-35.8 192-80-86-80-192-80zm219.3 56.3c60-10.8 100.7-32 100.7-56.3v-42.7c-35.5 25.1-96.5 38.6-160.7 41.8 29.5 14.3 51.2 33.5 60 57.2z" /></svg> <span class="pp-get">07</span>PP <sup>$<span class="pp-price">3.00</span></sup></h2>
+  <div class="seler-card">
+    <button class=seler-pic><svg viewBox="0 0 384 512" width="20" title="award" fill="#47f">
+  <path d="M97.12 362.63c-8.69-8.69-4.16-6.24-25.12-11.85-9.51-2.55-17.87-7.45-25.43-13.32L1.2 448.7c-4.39 10.77 3.81 22.47 15.43 22.03l52.69-2.01L105.56 507c8 8.44 22.04 5.81 26.43-4.96l52.05-127.62c-10.84 6.04-22.87 9.58-35.31 9.58-19.5 0-37.82-7.59-51.61-21.37zM382.8 448.7l-45.37-111.24c-7.56 5.88-15.92 10.77-25.43 13.32-21.07 5.64-16.45 3.18-25.12 11.85-13.79 13.78-32.12 21.37-51.62 21.37-12.44 0-24.47-3.55-35.31-9.58L252 502.04c4.39 10.77 18.44 13.4 26.43 4.96l36.25-38.28 52.69 2.01c11.62.44 19.82-11.27 15.43-22.03zM263 340c15.28-15.55 17.03-14.21 38.79-20.14 13.89-3.79 24.75-14.84 28.47-28.98 7.48-28.4 5.54-24.97 25.95-45.75 10.17-10.35 14.14-25.44 10.42-39.58-7.47-28.38-7.48-24.42 0-52.83 3.72-14.14-.25-29.23-10.42-39.58-20.41-20.78-18.47-17.36-25.95-45.75-3.72-14.14-14.58-25.19-28.47-28.98-27.88-7.61-24.52-5.62-44.95-26.41-10.17-10.35-25-14.4-38.89-10.61-27.87 7.6-23.98 7.61-51.9 0-13.89-3.79-28.72.25-38.89 10.61-20.41 20.78-17.05 18.8-44.94 26.41-13.89 3.79-24.75 14.84-28.47 28.98-7.47 28.39-5.54 24.97-25.95 45.75-10.17 10.35-14.15 25.44-10.42 39.58 7.47 28.36 7.48 24.4 0 52.82-3.72 14.14.25 29.23 10.42 39.59 20.41 20.78 18.47 17.35 25.95 45.75 3.72 14.14 14.58 25.19 28.47 28.98C104.6 325.96 106.27 325 121 340c13.23 13.47 33.84 15.88 49.74 5.82a39.676 39.676 0 0 1 42.53 0c15.89 10.06 36.5 7.65 49.73-5.82zM97.66 175.96c0-53.03 42.24-96.02 94.34-96.02s94.34 42.99 94.34 96.02-42.24 96.02-94.34 96.02-94.34-42.99-94.34-96.02z" />
+</svg></button> <b class="seler-name">TeamPP <svg viewBox="0 0 512 512" width="17" title="check-circle" fill="#0f6">
+  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" />
+</svg></b>
+  </div>
+</div>
+<div class="part-2">
+  <button class="get">Get</button>
+  <h2><svg viewBox="0 0 512 512" width="50" title="coins" fill="#eed">
+  <path d="M0 405.3V448c0 35.3 86 64 192 64s192-28.7 192-64v-42.7C342.7 434.4 267.2 448 192 448S41.3 434.4 0 405.3zM320 128c106 0 192-28.7 192-64S426 0 320 0 128 28.7 128 64s86 64 192 64zM0 300.4V352c0 35.3 86 64 192 64s192-28.7 192-64v-51.6c-41.3 34-116.9 51.6-192 51.6S41.3 334.4 0 300.4zm416 11c57.3-11.1 96-31.7 96-55.4v-42.7c-23.2 16.4-57.3 27.6-96 34.5v63.6zM192 160C86 160 0 195.8 0 240s86 80 192 80 192-35.8 192-80-86-80-192-80zm219.3 56.3c60-10.8 100.7-32 100.7-56.3v-42.7c-35.5 25.1-96.5 38.6-160.7 41.8 29.5 14.3 51.2 33.5 60 57.2z" /></svg> <span class="pp-get">14</span>PP <sup>$<span class="pp-price">5.00</span></sup></h2>
+  <div class="seler-card">
+    <button class=seler-pic><svg viewBox="0 0 384 512" width="20" title="award" fill="#47f">
+  <path d="M97.12 362.63c-8.69-8.69-4.16-6.24-25.12-11.85-9.51-2.55-17.87-7.45-25.43-13.32L1.2 448.7c-4.39 10.77 3.81 22.47 15.43 22.03l52.69-2.01L105.56 507c8 8.44 22.04 5.81 26.43-4.96l52.05-127.62c-10.84 6.04-22.87 9.58-35.31 9.58-19.5 0-37.82-7.59-51.61-21.37zM382.8 448.7l-45.37-111.24c-7.56 5.88-15.92 10.77-25.43 13.32-21.07 5.64-16.45 3.18-25.12 11.85-13.79 13.78-32.12 21.37-51.62 21.37-12.44 0-24.47-3.55-35.31-9.58L252 502.04c4.39 10.77 18.44 13.4 26.43 4.96l36.25-38.28 52.69 2.01c11.62.44 19.82-11.27 15.43-22.03zM263 340c15.28-15.55 17.03-14.21 38.79-20.14 13.89-3.79 24.75-14.84 28.47-28.98 7.48-28.4 5.54-24.97 25.95-45.75 10.17-10.35 14.14-25.44 10.42-39.58-7.47-28.38-7.48-24.42 0-52.83 3.72-14.14-.25-29.23-10.42-39.58-20.41-20.78-18.47-17.36-25.95-45.75-3.72-14.14-14.58-25.19-28.47-28.98-27.88-7.61-24.52-5.62-44.95-26.41-10.17-10.35-25-14.4-38.89-10.61-27.87 7.6-23.98 7.61-51.9 0-13.89-3.79-28.72.25-38.89 10.61-20.41 20.78-17.05 18.8-44.94 26.41-13.89 3.79-24.75 14.84-28.47 28.98-7.47 28.39-5.54 24.97-25.95 45.75-10.17 10.35-14.15 25.44-10.42 39.58 7.47 28.36 7.48 24.4 0 52.82-3.72 14.14.25 29.23 10.42 39.59 20.41 20.78 18.47 17.35 25.95 45.75 3.72 14.14 14.58 25.19 28.47 28.98C104.6 325.96 106.27 325 121 340c13.23 13.47 33.84 15.88 49.74 5.82a39.676 39.676 0 0 1 42.53 0c15.89 10.06 36.5 7.65 49.73-5.82zM97.66 175.96c0-53.03 42.24-96.02 94.34-96.02s94.34 42.99 94.34 96.02-42.24 96.02-94.34 96.02-94.34-42.99-94.34-96.02z" />
+</svg></button> <b class="seler-name">TeamPP <svg viewBox="0 0 512 512" width="17" title="check-circle" fill="#0f6">
+  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" />
+</svg></b>
+  </div>
+</div>
+<div class="part-cover"></div>
+</section>
+<section class="part-par">
+<div class="part-1">
+  <button class="get">Get</button>
+  <h2><svg viewBox="0 0 512 512" width="50" title="coins" fill="#eed">
+  <path d="M0 405.3V448c0 35.3 86 64 192 64s192-28.7 192-64v-42.7C342.7 434.4 267.2 448 192 448S41.3 434.4 0 405.3zM320 128c106 0 192-28.7 192-64S426 0 320 0 128 28.7 128 64s86 64 192 64zM0 300.4V352c0 35.3 86 64 192 64s192-28.7 192-64v-51.6c-41.3 34-116.9 51.6-192 51.6S41.3 334.4 0 300.4zm416 11c57.3-11.1 96-31.7 96-55.4v-42.7c-23.2 16.4-57.3 27.6-96 34.5v63.6zM192 160C86 160 0 195.8 0 240s86 80 192 80 192-35.8 192-80-86-80-192-80zm219.3 56.3c60-10.8 100.7-32 100.7-56.3v-42.7c-35.5 25.1-96.5 38.6-160.7 41.8 29.5 14.3 51.2 33.5 60 57.2z" /></svg> <span class="pp-get">28</span>PP <sup>$<span class="pp-price">9.00</span></sup></h2>
+    <div class="seler-card">
+    <button class=seler-pic><svg viewBox="0 0 384 512" width="20" title="award" fill="#47f">
+  <path d="M97.12 362.63c-8.69-8.69-4.16-6.24-25.12-11.85-9.51-2.55-17.87-7.45-25.43-13.32L1.2 448.7c-4.39 10.77 3.81 22.47 15.43 22.03l52.69-2.01L105.56 507c8 8.44 22.04 5.81 26.43-4.96l52.05-127.62c-10.84 6.04-22.87 9.58-35.31 9.58-19.5 0-37.82-7.59-51.61-21.37zM382.8 448.7l-45.37-111.24c-7.56 5.88-15.92 10.77-25.43 13.32-21.07 5.64-16.45 3.18-25.12 11.85-13.79 13.78-32.12 21.37-51.62 21.37-12.44 0-24.47-3.55-35.31-9.58L252 502.04c4.39 10.77 18.44 13.4 26.43 4.96l36.25-38.28 52.69 2.01c11.62.44 19.82-11.27 15.43-22.03zM263 340c15.28-15.55 17.03-14.21 38.79-20.14 13.89-3.79 24.75-14.84 28.47-28.98 7.48-28.4 5.54-24.97 25.95-45.75 10.17-10.35 14.14-25.44 10.42-39.58-7.47-28.38-7.48-24.42 0-52.83 3.72-14.14-.25-29.23-10.42-39.58-20.41-20.78-18.47-17.36-25.95-45.75-3.72-14.14-14.58-25.19-28.47-28.98-27.88-7.61-24.52-5.62-44.95-26.41-10.17-10.35-25-14.4-38.89-10.61-27.87 7.6-23.98 7.61-51.9 0-13.89-3.79-28.72.25-38.89 10.61-20.41 20.78-17.05 18.8-44.94 26.41-13.89 3.79-24.75 14.84-28.47 28.98-7.47 28.39-5.54 24.97-25.95 45.75-10.17 10.35-14.15 25.44-10.42 39.58 7.47 28.36 7.48 24.4 0 52.82-3.72 14.14.25 29.23 10.42 39.59 20.41 20.78 18.47 17.35 25.95 45.75 3.72 14.14 14.58 25.19 28.47 28.98C104.6 325.96 106.27 325 121 340c13.23 13.47 33.84 15.88 49.74 5.82a39.676 39.676 0 0 1 42.53 0c15.89 10.06 36.5 7.65 49.73-5.82zM97.66 175.96c0-53.03 42.24-96.02 94.34-96.02s94.34 42.99 94.34 96.02-42.24 96.02-94.34 96.02-94.34-42.99-94.34-96.02z" />
+</svg></button> <b class="seler-name">TeamPP <svg viewBox="0 0 512 512" width="17" title="check-circle" fill="#0f6">
+  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" />
+</svg></b>
+  </div>
+</div>
+<div class="part-2">
+  <button class="get">Get</button>
+  <h2><svg viewBox="0 0 512 512" width="50" title="coins" fill="#eed">
+  <path d="M0 405.3V448c0 35.3 86 64 192 64s192-28.7 192-64v-42.7C342.7 434.4 267.2 448 192 448S41.3 434.4 0 405.3zM320 128c106 0 192-28.7 192-64S426 0 320 0 128 28.7 128 64s86 64 192 64zM0 300.4V352c0 35.3 86 64 192 64s192-28.7 192-64v-51.6c-41.3 34-116.9 51.6-192 51.6S41.3 334.4 0 300.4zm416 11c57.3-11.1 96-31.7 96-55.4v-42.7c-23.2 16.4-57.3 27.6-96 34.5v63.6zM192 160C86 160 0 195.8 0 240s86 80 192 80 192-35.8 192-80-86-80-192-80zm219.3 56.3c60-10.8 100.7-32 100.7-56.3v-42.7c-35.5 25.1-96.5 38.6-160.7 41.8 29.5 14.3 51.2 33.5 60 57.2z" /></svg> <span class="pp-get">56</span>PP <sup>$<span class="pp-price">17</span></sup></h2>
+  <div class="seler-card">
+    <button class=seler-pic><svg viewBox="0 0 384 512" width="20" title="award" fill="#47f">
+  <path d="M97.12 362.63c-8.69-8.69-4.16-6.24-25.12-11.85-9.51-2.55-17.87-7.45-25.43-13.32L1.2 448.7c-4.39 10.77 3.81 22.47 15.43 22.03l52.69-2.01L105.56 507c8 8.44 22.04 5.81 26.43-4.96l52.05-127.62c-10.84 6.04-22.87 9.58-35.31 9.58-19.5 0-37.82-7.59-51.61-21.37zM382.8 448.7l-45.37-111.24c-7.56 5.88-15.92 10.77-25.43 13.32-21.07 5.64-16.45 3.18-25.12 11.85-13.79 13.78-32.12 21.37-51.62 21.37-12.44 0-24.47-3.55-35.31-9.58L252 502.04c4.39 10.77 18.44 13.4 26.43 4.96l36.25-38.28 52.69 2.01c11.62.44 19.82-11.27 15.43-22.03zM263 340c15.28-15.55 17.03-14.21 38.79-20.14 13.89-3.79 24.75-14.84 28.47-28.98 7.48-28.4 5.54-24.97 25.95-45.75 10.17-10.35 14.14-25.44 10.42-39.58-7.47-28.38-7.48-24.42 0-52.83 3.72-14.14-.25-29.23-10.42-39.58-20.41-20.78-18.47-17.36-25.95-45.75-3.72-14.14-14.58-25.19-28.47-28.98-27.88-7.61-24.52-5.62-44.95-26.41-10.17-10.35-25-14.4-38.89-10.61-27.87 7.6-23.98 7.61-51.9 0-13.89-3.79-28.72.25-38.89 10.61-20.41 20.78-17.05 18.8-44.94 26.41-13.89 3.79-24.75 14.84-28.47 28.98-7.47 28.39-5.54 24.97-25.95 45.75-10.17 10.35-14.15 25.44-10.42 39.58 7.47 28.36 7.48 24.4 0 52.82-3.72 14.14.25 29.23 10.42 39.59 20.41 20.78 18.47 17.35 25.95 45.75 3.72 14.14 14.58 25.19 28.47 28.98C104.6 325.96 106.27 325 121 340c13.23 13.47 33.84 15.88 49.74 5.82a39.676 39.676 0 0 1 42.53 0c15.89 10.06 36.5 7.65 49.73-5.82zM97.66 175.96c0-53.03 42.24-96.02 94.34-96.02s94.34 42.99 94.34 96.02-42.24 96.02-94.34 96.02-94.34-42.99-94.34-96.02z" />
+</svg></button> <b class="seler-name">TeamPP <svg viewBox="0 0 512 512" width="17" title="check-circle" fill="#0f6">
+  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" />
+</svg></b>
+  </div>
+</div>
+
+<div class="part-cover"></div>
+</section>
+<section class="card-list">
+  <div class="user-card">
+    
+  </div>
+</section>
+<section class="buy-gem" id="buygm">
+<section class="part-par">
+<div class="part-1">
+  <button class="get-gm">Get</button>
+  <h2><svg viewBox="0 0 576 512" width="40" title="gem" fill="#0f7">
+  <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z" /></svg> <span class="gm-get">1</span>GM <sup>$<span class="gm-price">4.00</span></sup></h2>
+    <div class="seler-card">
+    <button class=seler-pic><svg viewBox="0 0 384 512" width="20" title="award" fill="#47f">
+  <path d="M97.12 362.63c-8.69-8.69-4.16-6.24-25.12-11.85-9.51-2.55-17.87-7.45-25.43-13.32L1.2 448.7c-4.39 10.77 3.81 22.47 15.43 22.03l52.69-2.01L105.56 507c8 8.44 22.04 5.81 26.43-4.96l52.05-127.62c-10.84 6.04-22.87 9.58-35.31 9.58-19.5 0-37.82-7.59-51.61-21.37zM382.8 448.7l-45.37-111.24c-7.56 5.88-15.92 10.77-25.43 13.32-21.07 5.64-16.45 3.18-25.12 11.85-13.79 13.78-32.12 21.37-51.62 21.37-12.44 0-24.47-3.55-35.31-9.58L252 502.04c4.39 10.77 18.44 13.4 26.43 4.96l36.25-38.28 52.69 2.01c11.62.44 19.82-11.27 15.43-22.03zM263 340c15.28-15.55 17.03-14.21 38.79-20.14 13.89-3.79 24.75-14.84 28.47-28.98 7.48-28.4 5.54-24.97 25.95-45.75 10.17-10.35 14.14-25.44 10.42-39.58-7.47-28.38-7.48-24.42 0-52.83 3.72-14.14-.25-29.23-10.42-39.58-20.41-20.78-18.47-17.36-25.95-45.75-3.72-14.14-14.58-25.19-28.47-28.98-27.88-7.61-24.52-5.62-44.95-26.41-10.17-10.35-25-14.4-38.89-10.61-27.87 7.6-23.98 7.61-51.9 0-13.89-3.79-28.72.25-38.89 10.61-20.41 20.78-17.05 18.8-44.94 26.41-13.89 3.79-24.75 14.84-28.47 28.98-7.47 28.39-5.54 24.97-25.95 45.75-10.17 10.35-14.15 25.44-10.42 39.58 7.47 28.36 7.48 24.4 0 52.82-3.72 14.14.25 29.23 10.42 39.59 20.41 20.78 18.47 17.35 25.95 45.75 3.72 14.14 14.58 25.19 28.47 28.98C104.6 325.96 106.27 325 121 340c13.23 13.47 33.84 15.88 49.74 5.82a39.676 39.676 0 0 1 42.53 0c15.89 10.06 36.5 7.65 49.73-5.82zM97.66 175.96c0-53.03 42.24-96.02 94.34-96.02s94.34 42.99 94.34 96.02-42.24 96.02-94.34 96.02-94.34-42.99-94.34-96.02z" />
+</svg></button> <b class="seler-name">TeamPP <svg viewBox="0 0 512 512" width="17" title="check-circle" fill="#0f6">
+  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" />
+</svg></b>
+  </div>
+</div>
+<div class="part-2">
+  <button class="get-gm">Get</button>
+  <h2><svg viewBox="0 0 576 512" width="40" title="gem" fill="#0f7">
+  <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z" /></svg> <span class="gm-get">3</span>GM <sup>$<span class="gm-price">7.00</span></sup></h2>
+  <div class="seler-card">
+    <button class=seler-pic><svg viewBox="0 0 384 512" width="20" title="award" fill="#47f">
+  <path d="M97.12 362.63c-8.69-8.69-4.16-6.24-25.12-11.85-9.51-2.55-17.87-7.45-25.43-13.32L1.2 448.7c-4.39 10.77 3.81 22.47 15.43 22.03l52.69-2.01L105.56 507c8 8.44 22.04 5.81 26.43-4.96l52.05-127.62c-10.84 6.04-22.87 9.58-35.31 9.58-19.5 0-37.82-7.59-51.61-21.37zM382.8 448.7l-45.37-111.24c-7.56 5.88-15.92 10.77-25.43 13.32-21.07 5.64-16.45 3.18-25.12 11.85-13.79 13.78-32.12 21.37-51.62 21.37-12.44 0-24.47-3.55-35.31-9.58L252 502.04c4.39 10.77 18.44 13.4 26.43 4.96l36.25-38.28 52.69 2.01c11.62.44 19.82-11.27 15.43-22.03zM263 340c15.28-15.55 17.03-14.21 38.79-20.14 13.89-3.79 24.75-14.84 28.47-28.98 7.48-28.4 5.54-24.97 25.95-45.75 10.17-10.35 14.14-25.44 10.42-39.58-7.47-28.38-7.48-24.42 0-52.83 3.72-14.14-.25-29.23-10.42-39.58-20.41-20.78-18.47-17.36-25.95-45.75-3.72-14.14-14.58-25.19-28.47-28.98-27.88-7.61-24.52-5.62-44.95-26.41-10.17-10.35-25-14.4-38.89-10.61-27.87 7.6-23.98 7.61-51.9 0-13.89-3.79-28.72.25-38.89 10.61-20.41 20.78-17.05 18.8-44.94 26.41-13.89 3.79-24.75 14.84-28.47 28.98-7.47 28.39-5.54 24.97-25.95 45.75-10.17 10.35-14.15 25.44-10.42 39.58 7.47 28.36 7.48 24.4 0 52.82-3.72 14.14.25 29.23 10.42 39.59 20.41 20.78 18.47 17.35 25.95 45.75 3.72 14.14 14.58 25.19 28.47 28.98C104.6 325.96 106.27 325 121 340c13.23 13.47 33.84 15.88 49.74 5.82a39.676 39.676 0 0 1 42.53 0c15.89 10.06 36.5 7.65 49.73-5.82zM97.66 175.96c0-53.03 42.24-96.02 94.34-96.02s94.34 42.99 94.34 96.02-42.24 96.02-94.34 96.02-94.34-42.99-94.34-96.02z" />
+</svg></button> <b class="seler-name">TeamPP <svg viewBox="0 0 512 512" width="17" title="check-circle" fill="#0f6">
+  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" />
+</svg></b>
+  </div>
+</div>
+
+<div class="part-cover"></div>
+</section>
+</section>
+<section class="gift-claim">
+  <h4 onclick="this.parentElement.style.display='none';" class="dismiss-gift">×</h4>
+  <div class="card">
+    Refer and earn ×2,
+    <br>
+    Copy you referral link:
+    <textarea width="100%" id="refURL"></textarea>
+  </div>
+  <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+    <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+    <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+    <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+    <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+    <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+    <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+    <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+  <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+    <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+    <div class="card">
+    <h2>1PP</h2>
+    <button>CLAIM</button>
+  </div>
+  </section>
+<section class="gm-claim">
+  <h4 onclick="this.parentElement.style.display='none';" class="dismiss-gift">×</h4>
+  <div class="pay-container">
+    <h2>Withdraw Request</h2>
+    <form id="withR">
+  <input name="UserName" required placeholder="User name" type="text" id="uname">
+  <input name="Email" required placeholder="Email" type="email" id="uem">
+  <input name="Total points" required placeholder="Total points" type="number" id="tpp">
+  <input name="Total Gem" required placeholder="Total Gem" type="number" id="tgm">
+  <input name="Account Number" required placeholder="Bank Account number" type="number">
+  <select required name="Bank">
+    <option readonly>Select Local Bank</option>
+    <option value="Opay">Opay</option>
+    <option value="Palmpay">Palmpay</option>
+    <option value="Moniepoint MFB">Moniepoint MFB</option>
+  </select>
+  <button type="submit">Send</button>
+</form>
+
+<div id="msg"></div>
+
+<script>
+  document.getElementById("withR").addEventListener("submit", async function(e) {
+    e.preventDefault(); // prevent new window
+    
+    const form = e.target;
+    if(document.querySelector(".gm-count").textContent<=1){
+      document.getElementById("msg").innerHTML="<span style='color:#aa0;'>You need to have at least one gem before sending this request.</span>";
+    } 
+    else{
+    const data = new FormData(form);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/xnndzvnl", {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
+      
+      if (response.ok) {
+        document.getElementById("msg").innerText = "✅ Sent successfully!";
+        form.reset();
+      } else {
+        document.getElementById("msg").innerText = "❌ Error sending form.";
+      }
+    } catch (err) {
+      document.getElementById("msg").innerText = "⚠️ Network error.";
+    }
+    } 
+  });
+</script>
+    
+  
+</section>
+<section class="pay-for">
+  <h4 onclick="this.parentElement.style.display='none';" class="dismiss-gift">×</h4>
+  <div id="paypal-button-container"></div>
+</section>
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Audiowide');
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+      background: linear-gradient(135deg, #0c2c4d 0%, #1a4b70 100%);
+      min-height: 100vh;
+      padding-top: 4em;
+      -*-user-select: none;
+}
+.side-menu{
+  position: fixed;
+  z-index: 101;
+  width: 40vh;
+  height: ;
+  background: linear-gradient(50deg, #0df, #4af);
+  border-radius: 10px;
+  box-shadow: 0 0 4px #444;
+  padding-top: 1em;
+  display: block;
+  left: -90%;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn{
+  background: #0df;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 102;
+  position: fixed;
+  
+}
+.menu-tag:checked ~ .side-menu{
+  display: block;
+  left: 0;
+}
+.side-menu ul{
+  list-style: none;
+}
+.side-menu li{
+  color: #dde;
+  font-weight: ;
+  box-shadow: 0 0 2px #eee;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  background: rgba(0,140,190,0.7);
+  transition: all 0.5s ease-in-out;
+}
+.side-menu li:hover{
+  transform: translate(2px);
+  box-shadow: 0 0 4px #00f;
+}
+.side-menu a{
+  text-decoration: none;
+}
+.pay-for{
+  background: linear-gradient(30deg, #0df, #4df);
+  margin: 10vw;
+  width: 80vw;
+  position: fixed;
+  padding-top: 4em;
+  border-radius: 10px;
+  box-shadow: 0 0 4px #00f;
+  top: 30vh;
+  display: none;
+  padding: 2em;
+  max-height: 65vh;
+  overflow: scroll;
+}
+.gift-claim, .gm-claim{
+  background: rgba(255,255,255,1);
+  border-radius: 10px;
+  overflow: auto;
+  scroll-margin: 2em;
+  display: none;
+  align-items: flex-start;
+  width: 90vw;
+  margin-left: 5vw;
+  position: fixed;
+  padding: 0 3em;
+  padding-left: 5em;
+  top: 30vh;
+  height: 70vh;
+  transition: all 0.5s ease-in-out;
+}
+.gm-claim{
+  width: 100vw;
+  margin-left: 0;
+  padding: 3em;
+  top: 10vh;
+  height: 90vh;
+}
+.gm-claim form{
+  padding: 2em;
+  box-shadow: 0 0 4px #48f;
+  border-radius: 10px;
+}
+.gm-claim form input{
+  padding: 1.2em;
+  border-radius: 10px;
+  margin: 1em 0 0 0;
+  outline: 0;
+}
+.gm-claim form select{
+  padding: 1em;
+  border-radius: 10px;
+  margin: 1em;
+  margin-left: 0;
+  outline: 0;
+  background: transparent;
+}
+.gm-claim form button{
+  background: #08f;
+  padding: 1em 4em;
+  margin: 1em;
+  margin-left: 0;
+  border-radius: 10px;
+  border: 0;
+}
+.gm-claim h2{
+  color: #09f;
+}
+.gift-claim .card{
+  box-shadow: 0 0 2px #444;
+  margin: 5px;
+  padding: 5px;
+  color: #ddd;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  background: rgba(0,100,200,0.8);
+}
+.gift-claim .card button{
+  background: rgba(10,200,50,0.8);
+  color: #225;
+  font-weight: 1000;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 0 0 4px #eee;
+  width: 10em;
+}
+ .dismiss-gift{
+  font-size: 4em;
+  position: fixed;
+  color: #999999;
+  margin-left: -40px;
+  margin-top: -10px;
+}
+.prof{
+  background: linear-gradient(20deg, #049, #25a);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4em;
+  padding: 1em;
+  z-index: 99;
+}
+.prof .prof-img{
+  background: transparent;
+  border: 0.5px solid #eee;
+  box-shadow: 0 0 3px #0f7;
+  %2(width, height[: 3em;])
+  border-radius: 50%;
+}
+
+ .part-par{
+   width: 90vw;
+   height: 15em;
+   border: 1px groove #000444;
+   border-radius: 10px;
+   background: transparent;
+   margin: 20px;
+   overflow: hidden;
+ }
+.part-1, .part-2{
+  display: inline-block;
+  width: 49.2%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: rgba(205,255,200,0.1);
+  padding: 5px;
+}
+
+.part-cover{
+  background-color: rgba(0,100,200,0.8);
+  position: absolute;
+  width: 44.5%;
+  height: 15em;
+  margin-left: @random([0, 45%]);
+  display: block;
+margin-top: -15.2em;
+  border-radius: 10px;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+}
+$(class*:part) .get,.get-gm{
+  background: rgba(0,100,100,0.2);
+  border-radius: 6px;
+  padding: 2px 10px;
+  color: #0f9;
+  font-weight: 700;
+  font-size: 1.1em;
+  -*-text-stroke: 0.1px #3df;
+  border: 1px solid #eee;
+  margin: 1em;
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 4%;
+  transition: all 0.5s ease;
+  opacity: 85%;
+}
+.part-par h2, .re-user-card h2{
+  background: rgba(0,100,100,0.3);
+  border-radius: 10px;
+  color: #ddf;
+  font-family: "Audiowide" monospace;
+  padding: 3px 15px;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 2px #aaa, 0 0 4px #999, 0 0 6px rgba(0,100,100,0.8);
+  border: 1px solid #eee;
+  opacity: 50%;
+}
+.part-par h2:hover,.part-par .get:hover, .re-user-card h2:hover{
+  transform: translateY(-2px);
+  opacity: 100%;
+}
+$(class*:part) h2 sup{
+  color: #5f0;
+}
+.seler-card{
+  background: rgba(0,100,100,0.2);
+  border: 0.1px solid #eee;
+  box-shadow: 0 0 4px rgba(0,100,100,0.2);
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  border-radius: 5px;
+}
+.seler-card button{
+  border-radius: 50%;
+  border: 1px solid #eee;
+  box-shadow: 0 0 4px rgba(0,100,100,0.4);
+  background: ;
+  %2(width,height[: 2.8em;])
+  overflow: hidden;
+}
+.seler-name, .prof-name, .re-user-name{
+  color: #ddd;
+  margin-top: 15px;
+  padding-left: 4px;
+  
+}
+.re-user-card{
+  background: rgba(0,100,200,0.8);
+  width: 91vw;
+  margin:5vh 5vw;
+  border-radius: 10px;
+  padding: 6px;
+}
+.re-user-card h3{
+  color: #09f;
+}
+.re-user-card .re-card{
+  padding: 10px;
+  box-shadow: 0 0 2px #eee;
+  border-radius: 10px;
+}
+.re-user-card button.re-user-img{
+  background: rgba(0,200,100,0.5);
+  %2(width, height[: 3.2em;])
+  border: 0;
+  box-shadow: 0 0 2px #eee;
+  border-radius: 2em;
+  margin: 1.2px 0.9em;
+  font-size: ;
+  font-weight: 1000;
+  color: #ccc;
+  text-shadow: 0 0 2px #400;
+}
+.c-ex{
+  margin-left: 20%;
+  margin-top: 2%;
+}
+$(@keyframes popup,.gm-claim,.gift-claim&[0.5s ease-in-out 1 forwards]){
+    0%{
+        top: 100%;
+    }
+    100%{
+        top: 30vh;
+    }
+}
+$(@keyframes gm-c,.gm-claim&[0.5s ease-in 1 forwards]){
+  0%{
+    top: 100%;
+  }
+  100%{
+    top: 10vh;
+  }
+}
+@media (min-width: 600px){
+.part-par{
+   margin-left: 3.3em;
+   
+ }
+  .seler-card{
+    padding: 10px 15px;
+    
+  }
+ .seler-card button{
+   %2(width, height[: 3.2em;])
+ }
+}
+</style>
+<script>
+
+</script>
+<script src="main.js" type="module" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/fscss@1.1.6" async></script>
+
+
+
