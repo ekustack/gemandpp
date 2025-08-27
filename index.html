@@ -207,9 +207,10 @@
     <option value="Moniepoint MFB">Moniepoint MFB</option>
   </select>
   <button type="submit">Send</button>
+      <div id="msg"></div>
 </form>
 
-<div id="msg"></div>
+
 
 <script>
   document.getElementById("withR").addEventListener("submit", async function(e) {
@@ -217,7 +218,8 @@
     
     const form = e.target;
     if(document.querySelector(".gm-count").textContent<=1){
-      document.getElementById("msg").innerHTML="<span style='color:#aa0;'>You need to have at least one gem before sending this request.</span>";
+      document.getElementById("msg").innerHTML =
+  "<span style='color:#B00;'>❌ Request blocked. Minimum requirement: at least 1 gem,at least 70 PP.</span>";
     } 
     else{
     const data = new FormData(form);
