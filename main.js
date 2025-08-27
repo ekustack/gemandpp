@@ -46,6 +46,11 @@ const userCard={
     if(!currentUser){
       window.location.href =("/enter.html");
     }
+        const bgImage = currentUser.photoURL;
+bgImage?userCard.image.style.cssText = `background: url(${bgImage}) no-repeat center;
+background-size: contain;`:userCard.image.textContent=`${currentUser.displayName.slice(0,1)}`;
+userCard.image.textContent=`${currentUser.displayName.slice(0,1)}`;
+
     userCard.name.textContent=currentUser.displayName;
 const giftCount = document.querySelector(".gift-count");
 userCard.uem.value=currentUser.email;
