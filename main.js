@@ -43,9 +43,7 @@ const userCard={
       
       console.log(user.displayName);
    
-    if(!currentUser){
-      window.location.href =("/enter.html");
-    }
+    
         const bgImage = currentUser.photoURL;
 bgImage?userCard.image.style.cssText = `background: url(${bgImage}) no-repeat center;
 background-size: contain;`:userCard.image.textContent=`${currentUser.displayName.slice(0,1)}`;
@@ -179,7 +177,9 @@ window.initPoints = async function initPoints() {
 }
 
 initPoints();
-     
+     if(!user){
+      window.location.href =("/enter.html");
+     }
 }); 
 
 
