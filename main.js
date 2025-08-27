@@ -46,7 +46,7 @@ background-size: contain;`:userCard.image.textContent=`U`;
             
             
              
-    userCard.name.textContent=currentUser.displayName;
+    userCard.name.textContent=`${currentUser.displayName? currentUser.displayName:`${currentUser.id?'user_'+currentUser.id.slice(0,5):'user_'}`}`;
 const giftCount = document.querySelector(".gift-count");
 userCard.uem.value=currentUser.email;
             userCard.uname.value=currentUser.displayName;
