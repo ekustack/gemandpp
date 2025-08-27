@@ -38,12 +38,13 @@ const userCard={
    
     
         const bgImage = currentUser.photoURL;
-            if(currentUser.displayName){
+            
 bgImage?userCard.image.style.cssText = `background: url(${bgImage}) no-repeat center;
-background-size: contain;`:userCard.image.textContent=`${currentUser.displayName.slice(0,1)||""}`;
+background-size: contain;`:userCard.image.textContent=`U`;
                 
-                userCard.image.textContent=`${currentUser.displayName.slice(0,1)||"U"}`;
-            }
+                currentUser.displayName?userCard.image.textContent=`${currentUser.displayName.slice(0,1)}`:userCard.image.textContent="U";
+            
+            
              
     userCard.name.textContent=currentUser.displayName;
 const giftCount = document.querySelector(".gift-count");
