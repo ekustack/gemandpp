@@ -53,7 +53,7 @@ userCard.image.textContent=`${currentUser.displayName.slice(0,1)}`;
     userCard.name.textContent=currentUser.displayName;
 const giftCount = document.querySelector(".gift-count");
 userCard.uem.value=currentUser.email;
-document.getElementById("refURL").value = `https://pp.Onrendered.com/enter#ref?id=${encodeURIComponent(currentUser.email)}`;
+document.getElementById("refURL").value = `https://gemandpp.netlify.app/enter#ref?id=${encodeURIComponent(currentUser.email)}`;
 giftCount.innerText = userCard.claimCard.querySelectorAll(".card").length;
 userCard.getGift.addEventListener("click", (e)=>{
   
