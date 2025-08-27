@@ -61,8 +61,8 @@ userCard.claimCard.querySelectorAll(".card button").forEach(btn=>{
   btn.textContent = "CLAIMED";
   addPoint(1);
   giftCount.innerText -=1;
-  window.location.href="";
-  btn.onclick = null;
+ btn.onclick=null;
+  window.open("https://www.effectivecpmrate.com/uxx2gjrqc?key=76a628bbfc45e55ee2e31d6593b85938");
 }
 })
 
