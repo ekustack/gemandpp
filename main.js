@@ -39,6 +39,7 @@ const userCard={
 
 
     onAuthStateChanged(auth, (user) => {
+        if(user){
       currentUser = user;
       
       console.log(user.displayName);
@@ -177,7 +178,8 @@ window.initPoints = async function initPoints() {
 }
 
 initPoints();
-     if(!user){
+        } 
+     else{
       window.location.href =("/enter.html");
      }
 }); 
