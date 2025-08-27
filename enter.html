@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signup / Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #eee;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #555;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: #2196F3;
+      border-bottom: 3px solid #2196F3;
+    }
+
+    .form {
+      display: none;
+    }
+
+    .form.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .form input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .form input:focus {
+      border-color: #2196F3;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: #2196F3;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #1976D2;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .helper-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .helper-text a {
+      color: #2196F3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #errorMessage {
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: center;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="tabs">
+      <div class="tab active" data-target="signup-form">Sign Up</div>
+      <div class="tab" data-target="login-form">Log In</div>
+    </div>
+
+    <!-- Sign Up Form -->
+    <form id="signup-form" class="form active">
+      <h2>Create Account</h2>
+      <input type="text" id="fullname" placeholder="Full Name" required>
+      <input type="email" id="signup-email" placeholder="Email" required>
+      <input type="password" id="signup-password" placeholder="Password" required>
+      <input id="referEm" placeholder="Referral code" type="email" hidden>
+      <button type="submit" class="btn">Sign Up</button>
+      <p id="errorMessage"></p>
+      <p class="helper-text">Already have an account? <a href="#" data-switch="login-form">Log in</a></p>
+    </form>
+
+    <!-- Login Form -->
+    <form id="login-form" class="form">
+      <h2>Welcome Back</h2>
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button type="submit" class="btn">Log In</button>
+      <p class="helper-text">Don't have an account? <a href="#" data-switch="signup-form">Sign up</a></p>
+    </form>
+  </div>
+<script>
+    function processReferCode() {
+    const params = new URLSearchParams(window.location.search);
+    let value = params.get("id");
+    
+    if (!value) {
+      const hash = window.location.hash;
+      if (hash.startsWith("#ref")) {
+        const queryString = hash.split("?")[1];
+        if (queryString) {
+          const hashParams = new URLSearchParams(queryString);
+          value = hashParams.get("id");
+        }
+      }
+    }
+    
+    if (value) {
+      document.getElementById("referEm").value = decodeURIComponent(value).trim();
+    }
+  }
+  processReferCode();
+</script><script type="module" src="mainent.js" async></script><script>
+    const tabs = document.querySelectorAll(".tab");
+    const forms = document.querySelectorAll(".form");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        forms.forEach(f => f.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.target).classList.add("active");
+      });
+    });
+
+    document.querySelectorAll("[data-switch]").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const target = e.target.getAttribute("data-switch");
+        document.querySelector(`.tab[data-target="${target}"]`).click();
+      });
+    });
+  </script>
+</body>
+</html>
