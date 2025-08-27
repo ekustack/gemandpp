@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 import { getFirestore, collection, addDoc, onSnapshot, getDocs, query, where, orderBy, deleteDoc, doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
@@ -178,7 +178,14 @@ initPoints();
       window.location.href =("/enter.html");
      }
 }); 
-
+document.getElementById("log").addEventListener('click', () => {
+          signOut(auth).then(() => {
+            console.log("Logged out successfully");
+            window.location.reload();
+          }).catch((error) => {
+            console.error("Logout error:", error);
+          });
+        });
 
 window.addPoint = async function addPoint(pointTo) {
   const uRef = doc(db, "points", userCard.pp.name);
