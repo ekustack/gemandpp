@@ -39,9 +39,10 @@ const userCard={
     
         const bgImage = currentUser.photoURL;
 bgImage?userCard.image.style.cssText = `background: url(${bgImage}) no-repeat center;
-background-size: contain;`:userCard.image.textContent=`${currentUser.displayName.slice(0,1)||"U"}`;
-userCard.image.textContent=`${currentUser.displayName.slice(0,1)}`;
-
+background-size: contain;`:userCard.image.textContent=`${currentUser.displayName.slice(0,1)||""}`;
+            if(currentUser.displayName){
+userCard.image.textContent=`${currentUser.displayName.slice(0,1)||"U"}`;
+            } 
     userCard.name.textContent=currentUser.displayName;
 const giftCount = document.querySelector(".gift-count");
 userCard.uem.value=currentUser.email;
