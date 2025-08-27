@@ -53,7 +53,7 @@ userCard.getGift.addEventListener("click", (e)=>{
   userCard.claimCard.style.display='block';
 })
 userCard.gmIcon.addEventListener("click", (e)=>{
-  payFor(1,4.00);
+  payFor(9,4.00);
   document.querySelector(".pay-for").style.display = 'block';
 })
 userCard.claimCard.querySelectorAll(".card button").forEach(btn=>{
@@ -64,7 +64,7 @@ userCard.claimCard.querySelectorAll(".card button").forEach(btn=>{
   giftCount.innerText -=1;
  btn.onclick=null;
       setTimeout(()=>{
-  window.open("https://www.effectivecpmrate.com/ctfihpju5t?key=050c14db97a69b406f3592f7284346ad");
+  window.open("https://www.effectivecpmrate.com/uxx2gjrqc?key=76a628bbfc45e55ee2e31d6593b85938");
       }, 300);
 }
 })
@@ -100,7 +100,7 @@ sellCard.forEach(card =>{
   })
   gmGetBtn.forEach(gmBtn => {
       gmBtn.addEventListener("click", (e) => {
-        payFor(+gmBtn.parentElement.querySelector(".gm-get").innerText, gmBtn.parentElement.querySelector(".gm-price").innerText);
+        payFor(+gmBtn.parentElement.querySelector(".gm-get").innerText * 7, gmBtn.parentElement.querySelector(".gm-price").innerText);
         document.querySelector(".pay-for").style.display = 'block';
         
       });
