@@ -39,7 +39,7 @@ const userCard={
     
         const bgImage = currentUser.photoURL;
 bgImage?userCard.image.style.cssText = `background: url(${bgImage}) no-repeat center;
-background-size: contain;`:userCard.image.textContent=`${currentUser.displayName.slice(0,1)}`;
+background-size: contain;`:userCard.image.textContent=`${currentUser.displayName.slice(0,1)||"U"}`;
 userCard.image.textContent=`${currentUser.displayName.slice(0,1)}`;
 
     userCard.name.textContent=currentUser.displayName;
