@@ -13,10 +13,10 @@ const db = getFirestore(app);
     // SIGN UP
     const signupForm = document.getElementById('signup-form');
     const errorMessage = document.getElementById('errorMessage');
-    const fullname = document.getElementById("fullname").value.trim();
-
+    
     signupForm.addEventListener('submit', async (event) => {
       event.preventDefault();
+const fullname = document.getElementById("fullname").value.trim();
 
       const email = document.getElementById('signup-email').value;
       const password = document.getElementById('signup-password').value;
