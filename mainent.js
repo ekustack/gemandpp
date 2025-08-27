@@ -1,1 +1,99 @@
-const a=initializeApp;const b=getAuth;const c=createUserWithEmailAndPassword;const d=signInWithEmailAndPassword;const e=updateProfile;const f=getFirestore;const g=collection;const h=addDoc;const i=onSnapshot;const j=getDocs;const k=query;const l=where;const m=orderBy;const n=deleteDoc;const o=doc;const p=updateDoc;const q=increment;const r=await fetch("/.netlify/functions/verifyFb");const s=await r.json();const t=a(s);const u=b(t);const v=f(t);const w=g(v,"points");const x=document.getElementById("signup-form");const y=document.getElementById("errorMessage");x.addEventListener("submit",async z=>{z.preventDefault();const A=document.getElementById("fullname").value.trim();const B=document.getElementById("signup-email").value;const C=document.getElementById("signup-password").value;try{const D=await c(u,B,C);const E=D.user;await e(E,{displayName:A});y.style.color="green";y.innerHTML="&#x2705; Account created successfully!";console.log("User created:",E);initPoints();x.reset();setTimeout(()=>{window.location.href="/index.html"},2000)}catch(F){y.style.color="red";y.innerHTML=F.message}});const G=document.getElementById("login-form");G.addEventListener("submit",async H=>{H.preventDefault();const I=document.getElementById("login-email").value;const J=document.getElementById("login-password").value;try{const K=await d(u,I,J);const L=K.user;alert("&#x2705; Login successful! Welcome "+L.email);window.location.href="/index.html"}catch(M){alert("&#x274C; "+M.message)}});window.initPoints=async function N(){if(document.querySelector("#referEm")){const O=document.getElementById("referEm").value.trim();try{const P=k(w,l("emailAdd","==",O));const Q=await j(P);let R;if(Q.empty){const S=await h(w,{emailAdd:O,points:2,claimed:!1,createdAt:Date.now()});R={id:S.id,points:2}}else{const T=Q.docs[0];R={id:T.id,...T.data()};const U=o(v,"points",R.id);await p(U,{points:(R.points||0)+2});R.points=(R.points||0)+2}}catch(V){console.error("Error initializing points:",V)}}else{console.log("not found.")}}
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+import { getFirestore, collection, addDoc, onSnapshot, getDocs, query, where, orderBy, deleteDoc, doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    const res = await fetch("/.netlify/functions/verifyFb");
+const config = await res.json();
+const app = initializeApp(config);
+    const auth = getAuth(app);
+const db = getFirestore(app);
+    const pointCollection = collection(db, "points");
+    
+    // SIGN UP
+    const signupForm = document.getElementById('signup-form');
+    const errorMessage = document.getElementById('errorMessage');
+    
+    signupForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+const fullname = document.getElementById("fullname").value.trim();
+
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+await updateProfile(user, { displayName: fullname });
+        errorMessage.style.color = "green";
+        errorMessage.innerHTML = "✅ Account created successfully!";
+        console.log("User created:", user);
+        initPoints();
+        signupForm.reset();
+        setTimeout(() => window.location.href = "/index.html", 2000);
+      } catch (error) {
+        errorMessage.style.color = "red";
+        errorMessage.innerHTML = error.message;
+      }
+    });
+
+    // LOGIN
+    const loginForm = document.getElementById('login-form');
+    loginForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        alert("✅ Login successful! Welcome " + user.email);
+        window.location.href = "/index.html";
+      } catch (error) {
+        alert("❌ " + error.message);
+      }
+    });
+    window.initPoints = async function initPoints() {
+      if(document.querySelector("#referEm")){
+   const pointEm = document.getElementById("referEm").value.trim();
+
+  try {
+    
+    const pq = query(pointCollection, where("emailAdd", "==", pointEm));
+    const snapshot = await getDocs(pq);
+
+    let userDoc;
+
+    if (snapshot.empty) {
+      // First time → create new doc with 5 points
+      const newDoc = await addDoc(pointCollection, {
+        emailAdd: pointEm,
+        points: 2,
+        claimed: false, // means already claimed initial reward
+        createdAt: Date.now()
+      });
+      userDoc = { id: newDoc.id, points: 2 };
+      
+    } else {
+      // User already has a doc
+      const docSnap = snapshot.docs[0];
+      userDoc = { id: docSnap.id, ...docSnap.data() };
+      // If they don’t have points yet (claimed = false), grant once
+        
+        const userRef = doc(db, "points", userDoc.id);
+        await updateDoc(userRef, {
+          points: (userDoc.points || 0) + 2,
+        });
+        userDoc.points = (userDoc.points || 0) + 2;
+      
+    }
+
+  } catch (err) {
+    console.error("Error initializing points:", err);
+  }
+      }
+      else{
+        console.log("not found.")
+      }
+      }
