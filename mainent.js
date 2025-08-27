@@ -30,7 +30,7 @@ await updateProfile(user, { displayName: fullname });
         console.log("User created:", user);
         initPoints();
         signupForm.reset();
-        setTimeout(() => window.location.href = "/index.html", 1500);
+        setTimeout(() => window.location.href = "/index.html", 2000);
       } catch (error) {
         errorMessage.style.color = "red";
         errorMessage.innerHTML = error.message;
