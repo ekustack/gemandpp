@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 import { getFirestore, collection, addDoc, onSnapshot, getDocs, query, where, orderBy, deleteDoc, doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
@@ -13,6 +13,7 @@ const db = getFirestore(app);
     // SIGN UP
     const signupForm = document.getElementById('signup-form');
     const errorMessage = document.getElementById('errorMessage');
+    const fullname = document.getElementById("fullname").value.trim();
 
     signupForm.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -23,6 +24,7 @@ const db = getFirestore(app);
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
+await updateProfile(user, { displayName: fullname });
         errorMessage.style.color = "green";
         errorMessage.innerHTML = "✅ Account created successfully!";
         console.log("User created:", user);
