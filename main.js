@@ -38,12 +38,13 @@ const userCard={
    
     
         const bgImage = currentUser.photoURL;
+            if(currentUser.displayName){
 bgImage?userCard.image.style.cssText = `background: url(${bgImage}) no-repeat center;
-if(currentUser.displayName){
 background-size: contain;`:userCard.image.textContent=`${currentUser.displayName.slice(0,1)||""}`;
-            
-userCard.image.textContent=`${currentUser.displayName.slice(0,1)||"U"}`;
-            } 
+                
+                userCard.image.textContent=`${currentUser.displayName.slice(0,1)||"U"}`;
+            }
+             
     userCard.name.textContent=currentUser.displayName;
 const giftCount = document.querySelector(".gift-count");
 userCard.uem.value=currentUser.email;
@@ -175,7 +176,7 @@ window.initPoints = async function initPoints() {
 }
 
 initPoints();
-        } 
+    } 
      else{
       window.location.href =("/enter.html");
      }
