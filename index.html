@@ -246,322 +246,317 @@
   <div id="paypal-button-container"></div>
 </section>
 <style>
- @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Audiowide');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide');
 *{
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 body{
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-      background: linear-gradient(135deg, #0c2c4d 0%, #1a4b70 100%);
-      min-height: 100vh;
-      padding-top: 4em;
-      -*-user-select: none;
+margin: 0;
+font-family: "Montserrat", sans-serif;
+background: linear-gradient(135deg, #0c2c4d 0%, #1a4b70 100%);
+min-height: 100vh;
+padding-top: 4em;
+-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;-o-user-select: none;
 }
 .side-menu{
-  position: fixed;
-  z-index: 101;
-  width: 40vh;
-  height: ;
-  background: linear-gradient(50deg, #0df, #4af);
-  border-radius: 10px;
-  box-shadow: 0 0 4px #444;
-  padding-top: 1em;
-  display: block;
-  left: -90%;
-  transition: all 0.5s ease-in-out;
+position: fixed;
+z-index: 101;
+width: 40vh;
+height: ;
+background: linear-gradient(50deg, #0df, #4af);
+border-radius: 10px;
+box-shadow: 0 0 4px #444;
+padding-top: 1em;
+display: block;
+left: -90%;
+transition: all 0.5s ease-in-out;
 }
 .menu-btn{
-  background: #0df;
-  padding: 10px;
-  border-radius: 10px;
-  z-index: 102;
-  position: fixed;
-  
+background: #0df;
+padding: 10px;
+border-radius: 10px;
+z-index: 102;
+position: fixed;
 }
 .menu-tag:checked ~ .side-menu{
-  display: block;
-  left: 0;
+display: block;
+left: 0;
 }
 .side-menu ul{
-  list-style: none;
+list-style: none;
 }
 .side-menu li{
-  color: #dde;
-  font-weight: ;
-  box-shadow: 0 0 2px #eee;
-  padding: 5px;
-  margin: 5px;
-  border-radius: 10px;
-  background: rgba(0,140,190,0.7);
-  transition: all 0.5s ease-in-out;
+color: #dde;
+font-weight: ;
+box-shadow: 0 0 2px #eee;
+padding: 5px;
+margin: 5px;
+border-radius: 10px;
+background: rgba(0,140,190,0.7);
+transition: all 0.5s ease-in-out;
 }
 .side-menu li:hover{
-  transform: translate(2px);
-  box-shadow: 0 0 4px #00f;
+transform: translate(2px);
+box-shadow: 0 0 4px #00f;
 }
 .side-menu a{
-  text-decoration: none;
+text-decoration: none;
 }
 .pay-for{
-  background: linear-gradient(30deg, #0df, #4df);
-  margin: 10vw;
-  width: 80vw;
-  position: fixed;
-  padding-top: 4em;
-  border-radius: 10px;
-  box-shadow: 0 0 4px #00f;
-  top: 30vh;
-  display: none;
-  padding: 2em;
-  max-height: 65vh;
-  overflow: scroll;
+background: linear-gradient(30deg, #0df, #4df);
+margin: 10vw;
+width: 80vw;
+position: fixed;
+padding-top: 4em;
+border-radius: 10px;
+box-shadow: 0 0 4px #00f;
+top: 30vh;
+display: none;
+padding: 2em;
+max-height: 65vh;
+overflow: scroll;
 }
 .gift-claim, .gm-claim{
-  background: rgba(255,255,255,1);
-  border-radius: 10px;
-  overflow: auto;
-  scroll-margin: 2em;
-  display: none;
-  align-items: flex-start;
-  width: 90vw;
-  margin-left: 5vw;
-  position: fixed;
-  padding: 0 3em;
-  padding-left: 5em;
-  top: 30vh;
-  height: 70vh;
-  transition: all 0.5s ease-in-out;
+background: rgba(255,255,255,1);
+border-radius: 10px;
+overflow: auto;
+scroll-margin: 2em;
+display: none;
+align-items: flex-start;
+width: 90vw;
+margin-left: 5vw;
+position: fixed;
+padding: 0 3em;
+padding-left: 5em;
+top: 30vh;
+height: 70vh;
+transition: all 0.5s ease-in-out;
 }
 .gm-claim{
-  width: 100vw;
-  margin-left: 0;
-  padding: 3em;
-  top: 10vh;
-  height: 90vh;
+width: 100vw;
+margin-left: 0;
+padding: 3em;
+top: 10vh;
+height: 90vh;
 }
 .gm-claim form{
-  padding: 2em;
-  box-shadow: 0 0 4px #48f;
-  border-radius: 10px;
+padding: 2em;
+box-shadow: 0 0 4px #48f;
+border-radius: 10px;
 }
 .gm-claim form input{
-  padding: 1.2em;
-  border-radius: 10px;
-  margin: 1em 0 0 0;
-  outline: 0;
+padding: 1.2em;
+border-radius: 10px;
+margin: 1em 0 0 0;
+outline: 0;
 }
 .gm-claim form select{
-  padding: 1em;
-  border-radius: 10px;
-  margin: 1em;
-  margin-left: 0;
-  outline: 0;
-  background: transparent;
+padding: 1em;
+border-radius: 10px;
+margin: 1em;
+margin-left: 0;
+outline: 0;
+background: transparent;
 }
 .gm-claim form button{
-  background: #08f;
-  padding: 1em 4em;
-  margin: 1em;
-  margin-left: 0;
-  border-radius: 10px;
-  border: 0;
+background: #08f;
+padding: 1em 4em;
+margin: 1em;
+margin-left: 0;
+border-radius: 10px;
+border: 0;
 }
 .gm-claim h2{
-  color: #09f;
+color: #09f;
 }
 .gift-claim .card{
-  box-shadow: 0 0 2px #444;
-  margin: 5px;
-  padding: 5px;
-  color: #ddd;
-  border-radius: 10px;
-  display: inline-block;
-  text-align: center;
-  background: rgba(0,100,200,0.8);
+box-shadow: 0 0 2px #444;
+margin: 5px;
+padding: 5px;
+color: #ddd;
+border-radius: 10px;
+display: inline-block;
+text-align: center;
+background: rgba(0,100,200,0.8);
 }
 .gift-claim .card button{
-  background: rgba(10,200,50,0.8);
-  color: #225;
-  font-weight: 1000;
-  border-radius: 10px;
-  border: 0;
-  box-shadow: 0 0 4px #eee;
-  width: 10em;
+background: rgba(10,200,50,0.8);
+color: #225;
+font-weight: 1000;
+border-radius: 10px;
+border: 0;
+box-shadow: 0 0 4px #eee;
+width: 10em;
 }
- .dismiss-gift{
-  font-size: 4em;
-  position: fixed;
-  color: #999999;
-  margin-left: -40px;
-  margin-top: -10px;
+.dismiss-gift{
+font-size: 4em;
+position: fixed;
+color: #999999;
+margin-left: -40px;
+margin-top: -10px;
 }
 .prof{
-  background: linear-gradient(20deg, #049, #25a);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4em;
-  padding: 1em;
-  z-index: 99;
+background: linear-gradient(20deg, #049, #25a);
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+height: 4em;
+padding: 1em;
+z-index: 99;
 }
 .prof .prof-img{
-  background: transparent;
-  border: 0.5px solid #eee;
-  box-shadow: 0 0 3px #0f7;
-  %2(width, height[: 3em;])
-  border-radius: 50%;
+background: transparent;
+border: 0.5px solid #eee;
+box-shadow: 0 0 3px #0f7;
+width: 3em; height: 3em;
+border-radius: 50%;
 }
-
- .part-par{
-   width: 90vw;
-   height: 15em;
-   border: 1px groove #000444;
-   border-radius: 10px;
-   background: transparent;
-   margin: 20px;
-   overflow: hidden;
- }
+.part-par{
+width: 90vw;
+height: 15em;
+border: 1px groove #000444;
+border-radius: 10px;
+background: transparent;
+margin: 20px;
+overflow: hidden;
+}
 .part-1, .part-2{
-  display: inline-block;
-  width: 49.2%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  background: rgba(205,255,200,0.1);
-  padding: 5px;
+display: inline-block;
+width: 49.2%;
+height: 100%;
+overflow: hidden;
+position: relative;
+background: rgba(205,255,200,0.1);
+padding: 5px;
 }
-
 .part-cover{
-  background-color: rgba(0,100,200,0.8);
-  position: absolute;
-  width: 44.5%;
-  height: 15em;
-  margin-left: @random([0, 45%]);
-  display: block;
+background-color: rgba(0,100,200,0.8);
+position: absolute;
+width: 44.5%;
+height: 15em;
+margin-left: 0;
+display: block;
 margin-top: -15.2em;
-  border-radius: 10px;
-  z-index: -1;
-  transition: all 0.5s ease-in-out;
+border-radius: 10px;
+z-index: -1;
+transition: all 0.5s ease-in-out;
 }
-$(class*:part) .get,.get-gm{
-  background: rgba(0,100,100,0.2);
-  border-radius: 6px;
-  padding: 2px 10px;
-  color: #0f9;
-  font-weight: 700;
-  font-size: 1.1em;
-  -*-text-stroke: 0.1px #3df;
-  border: 1px solid #eee;
-  margin: 1em;
-  position: absolute;
-  margin-top: 1%;
-  margin-left: 4%;
-  transition: all 0.5s ease;
-  opacity: 85%;
+[class*='part'] .get,.get-gm{
+background: rgba(0,100,100,0.2);
+border-radius: 6px;
+padding: 2px 10px;
+color: #0f9;
+font-weight: 700;
+font-size: 1.1em;
+-webkit-text-stroke: 0.1px #3df;-moz-text-stroke: 0.1px #3df;-ms-text-stroke: 0.1px #3df;-o-text-stroke: 0.1px #3df;
+border: 1px solid #eee;
+margin: 1em;
+position: absolute;
+margin-top: 1%;
+margin-left: 4%;
+transition: all 0.5s ease;
+opacity: 85%;
 }
 .part-par h2, .re-user-card h2{
-  background: rgba(0,100,100,0.3);
-  border-radius: 10px;
-  color: #ddf;
-  font-family: "Audiowide" monospace;
-  padding: 3px 15px;
-  transition: all 0.5s ease-in-out;
-  box-shadow: 0 0 2px #aaa, 0 0 4px #999, 0 0 6px rgba(0,100,100,0.8);
-  border: 1px solid #eee;
-  opacity: 50%;
+background: rgba(0,100,100,0.3);
+border-radius: 10px;
+color: #ddf;
+font-family: "Audiowide" monospace;
+padding: 3px 15px;
+transition: all 0.5s ease-in-out;
+box-shadow: 0 0 2px #aaa, 0 0 4px #999, 0 0 6px rgba(0,100,100,0.8);
+border: 1px solid #eee;
+opacity: 50%;
 }
 .part-par h2:hover,.part-par .get:hover, .re-user-card h2:hover{
-  transform: translateY(-2px);
-  opacity: 100%;
+transform: translateY(-2px);
+opacity: 100%;
 }
-$(class*:part) h2 sup{
-  color: #5f0;
+[class*='part'] h2 sup{
+color: #5f0;
 }
 .seler-card{
-  background: rgba(0,100,100,0.2);
-  border: 0.1px solid #eee;
-  box-shadow: 0 0 4px rgba(0,100,100,0.2);
-  display: flex;
-  align-items: center;
-  padding: 7px;
-  border-radius: 5px;
+background: rgba(0,100,100,0.2);
+border: 0.1px solid #eee;
+box-shadow: 0 0 4px rgba(0,100,100,0.2);
+display: flex;
+align-items: center;
+padding: 7px;
+border-radius: 5px;
 }
 .seler-card button{
-  border-radius: 50%;
-  border: 1px solid #eee;
-  box-shadow: 0 0 4px rgba(0,100,100,0.4);
-  background: ;
-  %2(width,height[: 2.8em;])
-  overflow: hidden;
+border-radius: 50%;
+border: 1px solid #eee;
+box-shadow: 0 0 4px rgba(0,100,100,0.4);
+background: ;
+width: 2.8em;height: 2.8em;
+overflow: hidden;
 }
 .seler-name, .prof-name, .re-user-name{
-  color: #ddd;
-  margin-top: 15px;
-  padding-left: 4px;
-  
+color: #ddd;
+margin-top: 15px;
+padding-left: 4px;
 }
 .re-user-card{
-  background: rgba(0,100,200,0.8);
-  width: 91vw;
-  margin:5vh 5vw;
-  border-radius: 10px;
-  padding: 6px;
+background: rgba(0,100,200,0.8);
+width: 91vw;
+margin:5vh 5vw;
+border-radius: 10px;
+padding: 6px;
 }
 .re-user-card h3{
-  color: #09f;
+color: #09f;
 }
 .re-user-card .re-card{
-  padding: 10px;
-  box-shadow: 0 0 2px #eee;
-  border-radius: 10px;
+padding: 10px;
+box-shadow: 0 0 2px #eee;
+border-radius: 10px;
 }
 .re-user-card button.re-user-img{
-  background: rgba(0,200,100,0.5);
-  %2(width, height[: 3.2em;])
-  border: 0;
-  box-shadow: 0 0 2px #eee;
-  border-radius: 2em;
-  margin: 1.2px 0.9em;
-  font-size: ;
-  font-weight: 1000;
-  color: #ccc;
-  text-shadow: 0 0 2px #400;
+background: rgba(0,200,100,0.5);
+width: 3.2em; height: 3.2em;
+border: 0;
+box-shadow: 0 0 2px #eee;
+border-radius: 2em;
+margin: 1.2px 0.9em;
+font-size: ;
+font-weight: 1000;
+color: #ccc;
+text-shadow: 0 0 2px #400;
 }
 .c-ex{
-  margin-left: 20%;
-  margin-top: 2%;
+margin-left: 20%;
+margin-top: 2%;
 }
-$(@keyframes popup,.gm-claim,.gift-claim&[0.5s ease-in-out 1 forwards]){
-    0%{
-        top: 100%;
-    }
-    100%{
-        top: 30vh;
-    }
+popup,.gm-claim,.gift-claim{animation:popup 0.5s ease-in-out 1 forwards;}@keyframes popup{
+0%{
+top: 100%;
 }
-$(@keyframes gm-c,.gm-claim&[0.5s ease-in 1 forwards]){
-  0%{
-    top: 100%;
-  }
-  100%{
-    top: 10vh;
-  }
+100%{
+top: 30vh;
+}
+}
+gm-c,.gm-claim{animation:gm-c 0.5s ease-in 1 forwards;}@keyframes gm-c{
+0%{
+top: 100%;
+}
+100%{
+top: 10vh;
+}
 }
 @media (min-width: 600px){
 .part-par{
-   margin-left: 3.3em;
-   
- }
-  .seler-card{
-    padding: 10px 15px;
-    
-  }
- .seler-card button{
-   %2(width, height[: 3.2em;])
- }
+margin-left: 3.3em;
+}
+.seler-card{
+padding: 10px 15px;
+}
+.seler-card button{
+width: 3.2em; height: 3.2em;
+}
 }
 </style>
 <script>
