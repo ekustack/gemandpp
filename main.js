@@ -215,8 +215,4 @@ function payFor(addPP, PPamt) {
         await addPoint(addPP);
         alert(`Thank you, ${details.payer.name.given_name}! You are credited with posting points and can now add your "Learn More" link.`);
       }
-    }).render('#paypal-button-container');
-  } else {
-    console.warn("PayPal SDK not loaded or button container missing");
-  }
-}
+    }).render('#paypal-button-container');}else{}}
