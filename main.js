@@ -70,8 +70,10 @@ userCard.claimCard.querySelectorAll(".card button").forEach(btn=>{
  btn.onclick=null;
       document.querySelector(".if-s").style.display="block";
 }
-})
-
+});
+document.querySelector(".if-s").addEventListener("click", e=>{
+    e.target.style.display="none";
+});
 const sellCard = document.querySelectorAll(".part-par");
 sellCard.forEach(card =>{
   const leftTag = card.querySelector(".part-1");
