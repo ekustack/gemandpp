@@ -153,10 +153,12 @@ window.initPoints = async function initPoints() {
     // update UI
     
     if (userCard.pp) {
-      userCard.pp.textContent = userDoc.points;
-      userCard.tpp.value=userDoc.points;
+      userCard.pp.textContent = userDoc.points||0;
+      userCard.tpp.value=userDoc.points||0;
     }
-      
+      const nr=(userDoc.points||0)*10;
+      userCard.ngn.textContent=nr.toFixed(2); 
+   
 
     if (userDoc.points >= 30) {
   if (userCard.gm) {
@@ -171,9 +173,7 @@ window.initPoints = async function initPoints() {
     
     userCard.gm.textContent = ratio.toFixed(2);
     userCard.tgm.value=ratio.toFixed(2);
-      const nr=userDoc.points*10;
-      userCard.ngn.textContent=nr.toFixed(2); 
-        }
+           }
 }
   } catch (err) {
     console.error("Error initializing points:", err);
