@@ -69,7 +69,7 @@ userCard.claimCard.querySelectorAll(".card button").forEach(btn=>{
   giftCount.innerText -=1;
  btn.onclick=null;
       setTimeout(()=>{
-  window.open("https://www.effectivecpmrate.com/uxx2gjrqc?key=76a628bbfc45e55ee2e31d6593b85938");
+  window.open("https://www.effectivecpmrate.com/ctfihpju5t?key=050c14db97a69b406f3592f7284346ad");
       }, 300);
 }
 })
