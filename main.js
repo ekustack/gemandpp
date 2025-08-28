@@ -15,7 +15,8 @@ const userCard={
   image: document.querySelector(".re-user-img"), 
   name: document.querySelector(".re-user-name"), 
   pp: document.querySelector(".pp-count"), 
-  gm: document.querySelector(".gm-count"), 
+  gm: document.querySelector(".gm-count"),
+  ngn: document.querySelector("ngn"), 
   ex: document.querySelector(".c-ex"), 
   ppIcon: document.querySelector(".icon.pp"), 
   gmIcon: document.querySelector(".gem"),
@@ -155,7 +156,7 @@ window.initPoints = async function initPoints() {
       userCard.pp.textContent = userDoc.points;
       userCard.tpp.value=userDoc.points;
     }
-    if (userDoc.points >= 33) {
+    if (userDoc.points >= 30) {
   if (userCard.gm) {
     // Compute ratio: (points - 5) / points
     let ratio = (userDoc.points - 26) / userDoc.points;
@@ -166,8 +167,10 @@ window.initPoints = async function initPoints() {
     }
     
     // Format to one decimal place
-    userCard.gm.textContent = ratio.toFixed(1);
-    userCard.tgm.value=ratio.toFixed(1);
+    userCard.gm.textContent = ratio.toFixed(2);
+    userCard.tgm.value=ratio.toFixed(2);
+      nr=ratio*10;
+      userCard.ngn.textContent =nr.toFixed(2); 
   }
 }
   } catch (err) {
