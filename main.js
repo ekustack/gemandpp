@@ -68,9 +68,7 @@ userCard.claimCard.querySelectorAll(".card button").forEach(btn=>{
   addPoint(1);
   giftCount.innerText -=1;
  btn.onclick=null;
-      setTimeout(()=>{
-  window.open("https://www.effectivecpmrate.com/ctfihpju5t?key=050c14db97a69b406f3592f7284346ad");
-      }, 300);
+      document.querySelector(".if-s").style.display="block";
 }
 })
 
