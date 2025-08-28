@@ -156,7 +156,7 @@ window.initPoints = async function initPoints() {
       userCard.pp.textContent = userDoc.points;
       userCard.tpp.value=userDoc.points;
     }
-      nr=userDoc.points*10;
+      const nr=userDoc.points*10;
       userCard.ngn.textContent =nr.toFixed(2); 
 
     if (userDoc.points >= 30) {
