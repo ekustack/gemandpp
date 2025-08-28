@@ -159,7 +159,7 @@ window.initPoints = async function initPoints() {
       const arr = [15,38,58,70,45,60,50,40,93,20,25,35,47,30,18,42,44,49,53,57];
   const num=arr[Math.floor(Math.random()*arr.length)];
       const nr=(userDoc.points||0)*num;
-      userCard.ngn.textContent=nr.toFixed(2); 
+      userCard.ngn.textContent=fn(nr); 
    
 
     if (userDoc.points >= 30) {
@@ -223,3 +223,6 @@ function payFor(addPP, PPamt) {
         alert(`Thank you, ${details.payer.name.given_name}! You are credited with posting points and can now add your "Learn More" link.`);
       }
     }).render('#paypal-button-container');}else{}}
+window.fn = async function fn(num) {
+  return num.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
