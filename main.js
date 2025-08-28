@@ -223,6 +223,6 @@ function payFor(addPP, PPamt) {
         alert(`Thank you, ${details.payer.name.given_name}! You are credited with posting points and can now add your "Learn More" link.`);
       }
     }).render('#paypal-button-container');}else{}}
-window.fn = async function fn(num) {
-  return num.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+window.fn = function fn(fng) {
+  return fng.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
