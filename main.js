@@ -158,7 +158,7 @@ window.initPoints = async function initPoints() {
     if (userDoc.points >= 30) {
   if (userCard.gm) {
     // Compute ratio: (points - 5) / points
-    let ratio = (userDoc.points - 5) / userDoc.points;
+    let ratio = (userDoc.points - 3) / userDoc.points;
     
     // If result is negative, clamp it to 0
     if (ratio < 0) {
