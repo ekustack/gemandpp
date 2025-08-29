@@ -528,7 +528,8 @@ width: 3.2em; height: 3.2em;
     <button>CLAIM</button>
       </div>
   </section>
-  <section class="if-s"><h4 onclick="this.parentElement.style.display='none';" class="dismiss-gift">×</h4>
+  <section class="if-s">
+    <h4 onclick="this.parentElement.style.display='none';" class="dismiss-gift">×</h4>
  <iframe style="height: 94vh;" srcdoc='<script async="async" data-cfasync="false" src="//pl27529468.effectivecpmrate.com/45e9c16b5cfb94c3b51539d6ba9bda86/invoke.js"></script>
 <div id="container-45e9c16b5cfb94c3b51539d6ba9bda86" style="opacity:1%;"></div><button class="inCl" style="position: fixed;top: 10%;border-radius:10px;background: #49f;padding:2em 3em;border:0;box-shadow: 0 0 4px #eee;color: #99f6f0;font-weight: 700;z-index: -1;font-size: 2em;">Claim 1PP</button>' id="clh"></iframe></section>
 <style>
@@ -560,11 +561,12 @@ width: 3.2em; height: 3.2em;
     <option value="Opay">Opay</option>
     <option value="Palmpay">Palmpay</option>
     <option value="Moniepoint MFB">Moniepoint MFB</option>
-  </select><button type="submit">SEND REQUEST</button><div id="msg"></div></form><script>document.getElementById("withR").addEventListener("submit",async function(e){e.preventDefault();const f = e.target;if(document.querySelector(".gm-count").textContent<3||document.querySelector(".pp-count").textContent<200){document.getElementById("msg").innerHTML=`<div style="color:#B00; font-weight:500;">❌ Request blocked. You do not meet the minimum requirements: <ul style="margin:6px 0; padding-left:20px;"><li>4 Referrals</li><li>3 Gem (GM)</li><li>200 Posting Points (PP)</li></ul></div>`;}else{const data = new FormData(f);try{const r=await fetch("https://formspree.io/f/xnndzvnl",{method:"POST",body:data,headers:{ "Accept": "application/json" }});if(r.ok){document.getElementById("msg").innerText="✅ Sent successfully!";f.reset();}else{document.getElementById("msg").innerText="❌ Error sending form.";}}catch(err){document.getElementById("msg").innerText="⚠️ Network error.";}}});</script></section><section class="pay-for">
+  </select><button type="submit">SEND REQUEST</button><div id="msg"></div></form><script>document.getElementById("withR").addEventListener("submit",async function(e){e.preventDefault();const f = e.target;if(document.querySelector(".gm-count").textContent<2||document.querySelector(".pp-count").textContent<300){document.getElementById("msg").innerHTML=`<div style="color:#B00; font-weight:500;">❌ Request blocked. You do not meet the minimum requirements: <ul style="margin:6px 0; padding-left:20px;"><li>4 Referrals</li><li>2 Gem (GM)</li><li>300 Posting Points (PP)</li></ul></div>`;}else{const data = new FormData(f);try{const r=await fetch("https://formspree.io/f/xnndzvnl",{method:"POST",body:data,headers:{ "Accept": "application/json" }});if(r.ok){document.getElementById("msg").innerText="✅ Sent successfully!";f.reset();}else{document.getElementById("msg").innerText="❌ Error sending form.";}}catch(err){document.getElementById("msg").innerText="⚠️ Network error.";}}});</script></section><section class="pay-for">
   <h4 onclick="this.parentElement.style.display='none';" class="dismiss-gift">×</h4>
   <div id="paypal-button-container"></div>
 </section><script></script><script src="/main.js" type="module" defer></script>
-
+<script async="async" data-cfasync="false" src="//pl27529468.effectivecpmrate.com/45e9c16b5cfb94c3b51539d6ba9bda86/invoke.js"></script>
+<div id="container-45e9c16b5cfb94c3b51539d6ba9bda86" style=""></div>
 
 
 
