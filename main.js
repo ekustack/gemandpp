@@ -206,7 +206,7 @@ window.addPoint = async function addPoint(pointTo) {
   initPoints();
 };
 
-function payFor(addPP, PPamt) {
+window.payFor = async function payFor(addPP, PPamt) {
   if (window.paypal && document.querySelector("#paypal-button-container")) {
     paypal.Buttons({
       createOrder: (data, actions) => {
