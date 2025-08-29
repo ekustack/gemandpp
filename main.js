@@ -71,8 +71,8 @@ userCard.claimCard.querySelectorAll(".card button").forEach(btn=>{
       document.querySelector(".if-s").style.display="block";
 }
 });
-document.querySelector(".if-s").addEventListener("click", e=>{
-    e.target.style.display="none";
+document.querySelector(".if-s").addEventListener("click", (e)=>{
+    document.querySelector(".if-s").style.display="none";
 });
 const sellCard = document.querySelectorAll(".part-par");
 sellCard.forEach(card =>{
