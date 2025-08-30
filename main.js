@@ -156,7 +156,7 @@ window.initPoints = async function initPoints() {
       userCard.pp.textContent = userDoc.points||0;
       userCard.tpp.value=userDoc.points||0;
     }
-      const arr = [15,12,38,17,33,10,26,8,13,20,25,35,6,30,18,42,44,49,7,19];
+      const arr = [15,12,38,17,33,10,26,8,13,20,25,35,6,30,18,42,39,22,7,19];
   const num=arr[Math.floor(Math.random()*arr.length)];
       const nr=(userDoc.points||0)*num;
       userCard.ngn.textContent=fn(nr); 
