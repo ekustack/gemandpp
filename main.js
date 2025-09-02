@@ -307,5 +307,14 @@ else{
   }, 3000);
 } 
 });
-
+document.getElementById("withR").addEventListener("submit",async function(e){
+    e.preventDefault();
+    const f = e.target;
+    if(document.querySelector(".gm-count").textContent<1||document.querySelector(".pp-count").textContent<400){
+    document.getElementById("msg").innerHTML=`<div style="color:#B00; font-weight:500;">❌ Request blocked. You do not meet the minimum requirements: <ul style="margin:6px 0; padding-left:20px;"><li>4 Referrals</li><li>1 Gem (GM)</li><li>400 Posting Points (PP)</li></ul></div>`;
+    }else{
+    const data = new FormData(f);try{
+    const r=await fetch("https://formspree.io/f/xnndzvnl",{method:"POST",body:data,headers:{ "Accept": "application/json" }});
+    if(r.ok){
+    document.getElementById("msg").innerText="✅ Sent successfully!";f.reset();}else{document.getElementById("msg").innerText="❌ Error sending form.";}}catch(err){document.getElementById("msg").innerText="⚠️ Network error.";}}});
 
