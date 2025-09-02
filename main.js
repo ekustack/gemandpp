@@ -255,7 +255,7 @@ const rewards = [
   { text: "+25 PP", value: 25 },
   { text: "-9 PP", value: -9 }, 
   { text: "Try Again", value: 0 }, 
-  { text: "+7 PP", value: 7 },
+  { text: "-7 PP", value: -7 },
   { text: "-16 PP", value: -16 },
   { text: "-12 PP", value: -12 },
   { text: "+4 PP", value: 4}
