@@ -249,10 +249,13 @@ const rewards = [
   { text: "-1 PP", value: -1 }, 
   { text: "-10 PP", value: -10 }, 
   { text: "+2 PP", value: +2 }, 
-  { text: "+15 PP", value: 15 }, 
-  { text: "-17 PP", value: -17 }, 
+  { text: "+9 PP", value: 15 }, 
+  { text: "-13 PP", value: -17 }, 
   { text: "Try Again", value: 0 },
-  { text: "+12 PP", value: 12 }
+  { text: "+12 PP", value: 12 },
+  { text: "-9 PP", value: 12 }, 
+  { text: "Try Again", value: 0 }, 
+  { text: "-7 PP", value: 7 }, 
 ];
 
 function drawWheel() {
