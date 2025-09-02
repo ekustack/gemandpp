@@ -77,7 +77,7 @@ userCard.claimCard.querySelectorAll(".card button").forEach(btn=>{
   addPoint(1);
   giftCount.innerText -=1;
  btn.onclick=null;
-      document.querySelector(".if-s").style.display="block";
+      window.open("https://www.revenuecpmgate.com/uxx2gjrqc?key=76a628bbfc45e55ee2e31d6593b85938");
 }
 });
 document.querySelector(".if-s").addEventListener("click", (e)=>{
