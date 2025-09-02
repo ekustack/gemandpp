@@ -257,7 +257,7 @@ const rewards = [
   { text: "Try Again", value: 0 }, 
   { text: "+7 PP", value: 7 },
   { text: "-16 PP", value: -16 },
-  { text: "+40 PP", value: 40 },
+  { text: "+12 PP", value: 12 },
   { text: "+4 PP", value: 4}
 ];
 
