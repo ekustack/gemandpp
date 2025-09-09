@@ -604,179 +604,203 @@ width: 3.2em; height: 3.2em;
   <h4 onclick="this.parentElement.style.display='none';" class="dismiss-gift">×</h4>
   <div id="paypal-button-container"></div>
 </section><script></script>
-  <section class="crypto-trans wireframe" aria-label="Crypto Transactions (24h)">
-  <header>
-    <h3>24h PPGM — Active</h3>
-    <small>PP Gem </small>
-  </header>
+  <section class="crypto-trans wireframe" aria-label="Crypto Transactions (24h)">  
+  <header>  
+    <h3>24h PPGM — Frame</h3>  
+    <small>Gem tranf</small>  
+  </header>  
+  <div class="chart" role="img" aria-describedby="chart-desc">  
+    <div class="bar"></div>  
+    <div class="bar"></div>  
+    <div class="bar"></div>  
+    <div class="bar"></div>  
+    <div class="bar"></div>  
+    <div class="bar"></div>  
+    <div class="bar"></div>  
+  </div>  
+  <p id="chart-desc" class="sr-only">Bar chart showing 24-hour cryptocurrency transaction data for PPGM, Wthdr, Spins, fel, NGPP, NGGM, and PP.</p>  
+  <footer class="legend">  
+    <span class="dot"></span>  
+    <span>GMframe = ! • NGPP = 10% steps</span>  
+  </footer>  
+</section>  
 
-  <div class="chart">
-    <!-- 7 bars to feel more “market-like”. You can trim/add; arrays below handle styling. -->
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
+<style>  
+  /* ====== DATA ARRAYS ====== */  
+  @arr tokens[PPGM, Wthdr, Spins, fel, NGPP, NGGM, PP]  
+  @arr heights[65%, 82%, 58%, 74%, 33%, 49%, 71%]  
+  @arr colors[#0ff, #77f, #8af, #9cf, #6df, #4ef, #2dd]  
+  @arr length[1,2,3,4,5,6,7]  
 
-  <footer class="legend">
-    <span class="dot"></span>
-    <span>GM Back Read = ! • NGPP = 10% steps</span>
-  </footer>
-</section>
+  /* ====== LAYOUT ====== */  
+  $pad: 1.25rem;  
+  $radius: 14px;  
+  $barW: 56px;  
+  $gap: 14px;  
+  $grid: rgba(255,255,255,.08);  
+  $text: #dfe7ff;  
+  $muted: #9fb1d9;  
+  $bg: #0b1020;  
+  $panel: rgba(255,255,255,.03);  
 
+  .crypto-trans {  
+    width: min(90%, 1000px);  
+    margin: 4rem auto;  
+    padding: $pad!;  
+    color: $text!;  
+    background: $bg!;  
+    border-radius: $radius!;  
+    box-shadow: 0 20px 60px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.06);  
+  }  
 
-<style>
-  /* ====== DATA ARRAYS (edit these only) ====== */
-  @arr tokens[PPGM, Wthdr, Spins, fel, NGPP, NGGM, PP]
-  /* Use percentages for heights (0–100). */
-  @arr heights[65%, 82%, 58%, 74%, 33%, 49%, 71%]
-  /* Wireframe stroke colors per bar */
-  @arr colors[#0ff, #77f, #8af, #9cf, #6df, #4ef, #2dd]
-  /* ==== length ====*/
-    @arr length[1,2,3,4,5,6,7]
+  .crypto-trans header {  
+    display: flex;  
+    align-items: baseline;  
+    justify-content: space-between;  
+    gap: .75rem;  
+    margin-bottom: .75rem;  
+  }  
 
-  /* ====== LAYOUT ====== */
-  
-    $pad: 1.25rem;
-    $radius: 14px;
-    $barW: 56px;
-    $gap: 14px;
-    $grid: rgba(255,255,255,.08);
-    $text: #dfe7ff;
-    $muted: #9fb1d9;
-    $bg: #0b1020;
-    $panel: rgba(255,255,255,.03);
-.crypto-trans{
-    width: min(90%, 1000px);
-    margin: 4rem auto;
-    padding: $pad!;
-    color: $text!;
-    background: $bg!;
-    border-radius: $radius!;
-    box-shadow: 0 20px 60px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.06);
-  }
+  .crypto-trans h3 {  
+    margin: 0;  
+    font-size: clamp(1rem, 1.2rem + .5vw, 1.4rem);  
+    letter-spacing: .3px;  
+  }  
 
-  .crypto-trans header{
-    display:flex; align-items:baseline; justify-content:space-between;
-    gap: .75rem; margin-bottom: .75rem;
-  }
-  .crypto-trans h3{ margin:0; font-size: clamp(1rem, 1.2rem + .5vw, 1.4rem); letter-spacing:.3px}
-  .crypto-trans small{ color: $muted!;}
+  .crypto-trans small {  
+    color: $muted!;  
+  }  
 
-  /* Chart panel with wireframe grid */
-  .chart{
-    position: relative;
-    height: 22rem;
-    padding: 1.25rem 1rem 2.25rem;
-    border-radius: calc($radius! - 4px);
-    background:
-      /* horizontal grid lines */
-      repeating-linear-gradient(
-        to top,
-        transparent 0 2.2rem,
-        $grid! 2.2rem 2.21rem
-      ),
-      $panel!;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: $barW!;
-    align-items: end;
-    gap: $gap!;
-    overflow: hidden;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
+  /* Screen reader only text */  
+  .sr-only {  
+    position: absolute;  
+    width: 1px;  
+    height: 1px;  
+    padding: 0;  
+    margin: -1px;  
+    overflow: hidden;  
+    clip: rect(0, 0, 0, 0);  
+    border: 0;  
+  }  
 
-  /* y-axis scale labels (left) – decorative */
-  .chart::before{
-    content:"100 90 80 70 60 50 40 30 20 10 0";
-    position:absolute; left:.5rem; top: .8rem; bottom:2.25rem;
-    white-space: pre; line-height: 2.2rem; font-size:.7rem;
-    color: $muted!;
-    opacity:.8; pointer-events:none;
-  }
+  /* Chart panel */  
+  .chart {  
+    position: relative;  
+    height: 22rem;  
+    padding: 1.25rem 1rem 2.25rem;  
+    border-radius: calc($radius! - 4px);  
+    background:  
+      repeating-linear-gradient(  
+        to top,  
+        transparent 0 2.2rem,  
+        $grid! 2.2rem 2.21rem  
+      ),  
+      $panel!;  
+    display: grid;  
+    grid-auto-flow: column;  
+    grid-auto-columns: $barW!;  
+    align-items: end;  
+    gap: $gap!;  
+    overflow-x: auto;  
+    overflow-y: hidden;  
+  }  
 
-  /* ====== BARS ====== */
-  .bar{
-    position: relative;
-    height: 0; /* will be set via array below */
-    border-radius: 10px 10px 0 0;
-    background: transparent; /* wireframe look */
-    box-shadow:
-      inset 0 0 0 2px currentColor,
-      0 0 12px rgba(0, 255, 255, .08);
-    transform: translateZ(0);
-    transition: height 900ms cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
-  }
+  .chart::before {  
+    content: "100 90 80 70 60 50 40 30 20 10 0";  
+    position: absolute;  
+    left: .5rem;  
+    top: .8rem;  
+    bottom: 2.25rem;  
+    white-space: pre;  
+    line-height: 2.2rem;  
+    font-size: .7rem;  
+    color: $muted!;  
+    opacity: .8;  
+    pointer-events: none;  
+    user-select: none;  
+  }  
 
-  /* Set heights from array */
-  .bar:nth-child(@arr.heights[]){ height: @arr.heights[]; }
+  /* ====== BARS ====== */  
+  .bar {  
+    position: relative;  
+    height: 0;  
+    border-radius: 10px 10px 0 0;  
+    background: transparent;  
+    box-shadow: inset 0 0 0 2px currentColor,  
+                0 0 12px rgba(0,255,255,.08);  
+    transition: height 900ms cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;  
+  }  
 
-  /* Assign per-bar colors */
-  .bar:nth-child(@arr.colors[]){ color: @arr.colors[]; }
+  .bar:nth-child(@arr.heights[]) { height: @arr.heights[]; }  
+  .bar:nth-child(@arr.colors[]) { color: @arr.colors[]; }  
 
-  /* Labels under each bar from tokens array */
+  .bar:nth-child(@arr.tokens[]):after {  
+    content: "@arr.tokens[]";  
+    position: absolute;  
+    inset: auto 0 -1.6rem 0;  
+    text-align: center;  
+    font-size: .8rem;  
+    color: var(--muted);  
+  }  
 
-  
-  .bar:nth-child(@arr.tokens[]) :after{
-    content: "@arr.tokens[]";
-    position: absolute; inset: auto 0 -1.6rem 0;
-    text-align: center; font-size: .8rem; color: var(--muted);
-  }
+  .bar:nth-child(@arr.length[]):hover::before {  
+    $length: @arr.length[];  
+    content: "@arr.tokens[$length!] • @arr.heights[$length!]";  
+    position: absolute;  
+    left: 50%;  
+    bottom: calc(100% + .6rem);  
+    transform: translateX(-50%);  
+    padding: .35rem .55rem;  
+    font-size: .75rem;  
+    border-radius: 8px;  
+    background: rgba(5,12,28,.95);  
+    box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 8px 20px rgba(0,0,0,.35);  
+    white-space: nowrap;  
+  }  
 
-  /* Tooltip on hover (shows token + height) */
-  .bar:nth-child(@arr.length[] ):hover::before{
-    $length: @arr.length[];
-    content: "@arr.tokens[$length!]  • @arr.heights[$length!]";
-    position: absolute; left: 50%; bottom: calc(100% + .6rem);
-    transform: translateX(-50%);
-    padding: .35rem .55rem; font-size: .75rem;
-    border-radius: 8px;
-    background: rgba(5,12,28,.95);
-    box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 8px 20px rgba(0,0,0,.35);
-    white-space: nowrap;
-  }
+  .bar:hover {  
+    box-shadow: inset 0 0 0 2px currentColor,  
+                0 0 25px rgba(0,255,255,.18);  
+  }  
 
-  .bar:hover{
-    box-shadow:
-      inset 0 0 0 2px currentColor,
-      0 0 25px rgba(0, 255, 255, .18);
-  }
+  /* ====== RESPONSIVE ====== */  
+  @media (max-width: 900px) {  
+    .crypto-trans { $barW: 44px; $gap: 10px; }  
+    .chart { height: 19rem; }  
+  }  
 
-  /* ====== RESPONSIVE ====== */
-  @media (max-width: 900px){
-    .crypto-trans{ $barW: 44px; $gap: 10px; }
-    .chart{ height: 19rem; }
-  }
-  @media (max-width: 700px){
-    .crypto-trans{ $barW: 40px; $gap: 10px; }
-    .chart{ height: 17rem; padding: 1rem .75rem 2rem; }
- 
- 
-  @media (max-width: 520px){
-    .crypto-trans{ $barW: 38px; $gap: 8px; }
-    .chart{ height: 15rem }
-   
-   /* hide y-scale on very small screens */
-    .chart{ padding-bottom: 1.6rem }
-  }
+  @media (max-width: 700px) {  
+    .crypto-trans { $barW: 40px; $gap: 10px; }  
+    .chart { height: 17rem; }  
+    .chart .bar:nth-child(n+7) { display: none; }  
+  }  
 
-  .legend{
-    display:flex; align-items:center; gap:.6rem;
-    margin-top: .75rem; color: var(--muted); font-size:.85rem;
-  }
-  .legend .dot{
-    width:.75rem; height:.75rem; border-radius:50%;
-    background: linear-gradient(90deg, #0ff, #6df);
-    box-shadow: 0 0 12px rgba(0,255,255,.45), inset 0 0 0 2px rgba(255,255,255,.25);
-  }
-</style>
+  @media (max-width: 520px) {  
+    .crypto-trans { $barW: 38px; $gap: 8px; }  
+    .chart { height: 15rem; padding-bottom: 1.6rem; }  
+    .chart .bar:nth-child(n+6) { display: none; }  
+  }  
+
+  .legend {  
+    display: flex;  
+    align-items: center;  
+    gap: .6rem;  
+    margin-top: .75rem;  
+    color: var(--muted);  
+    font-size: .85rem;  
+  }  
+
+  .legend .dot {  
+    width: .75rem;  
+    height: .75rem;  
+    border-radius: 50%;  
+    background: linear-gradient(90deg, #0ff, #6df);  
+    box-shadow: 0 0 12px rgba(0,255,255,.45), inset 0 0 0 2px rgba(255,255,255,.25);  
+  }  
+</style>  
 
 <script async src="https://cdn.jsdelivr.net/npm/fscss@1.1.6"></script>
-  <script src="/main.js" type="module" defer></script>
+<script src="/main.js" type="module" defer></script>
 <script async="async" data-cfasync="false" src="//pl27529468.effectivecpmrate.com/45e9c16b5cfb94c3b51539d6ba9bda86/invoke.js"></script>
 <div id="container-45e9c16b5cfb94c3b51539d6ba9bda86" style=""></div>
 
