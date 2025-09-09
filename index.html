@@ -627,6 +627,7 @@ width: 3.2em; height: 3.2em;
   </footer>
 </section>
 
+
 <style>
   /* ====== DATA ARRAYS (edit these only) ====== */
   @arr tokens[PPGM, Wthdr, Spins, fel, NGPP, NGGM, PP]
@@ -685,6 +686,8 @@ width: 3.2em; height: 3.2em;
     align-items: end;
     gap: $gap!;
     overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 
   /* y-axis scale labels (left) – decorative */
@@ -751,18 +754,13 @@ width: 3.2em; height: 3.2em;
   @media (max-width: 700px){
     .crypto-trans{ $barW: 40px; $gap: 10px; }
     .chart{ height: 17rem; padding: 1rem .75rem 2rem; }
-    /* show first 6 bars */
-    .chart .bar:nth-last-child(n+2){ display: block }
-    .chart .bar:nth-last-child(n+3){ display: none } /* keep 6 total visible */
-  }
+ 
+ 
   @media (max-width: 520px){
     .crypto-trans{ $barW: 38px; $gap: 8px; }
     .chart{ height: 15rem }
-    /* show first 5 bars for tiny screens */
-    .chart .bar:nth-last-child(n+3){ display: none }
-  }
-  @media (max-width: 400px){
-    .chart::before{ display:none } /* hide y-scale on very small screens */
+   
+   /* hide y-scale on very small screens */
     .chart{ padding-bottom: 1.6rem }
   }
 
