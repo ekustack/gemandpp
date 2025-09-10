@@ -653,13 +653,13 @@ width: 3.2em; height: 3.2em;
 </section>  
 
 <style>  
-  /* ====== DATA ARRAYS ====== */  
+  
   @arr tokens[TeamPP, TeamGM, TeamVUW, TeamNGPP, NGPP, NGGM, NGVUW]  
   @arr heights[65%, 82%, 58%, 74%, 33%, 49%, 71%]  
-  @arr colors[#956, #0f9, #8af, #9cf, #6df, #4ef, #2dd]  
+  @arr colors[#ff6, #0f9, #f90, #9cf, #a00, #9e0, #2dd]  
   @arr length[1,2,3,4,5,6,7]  
 
-  /* ====== LAYOUT ====== */  
+    
   $pad: 1.25rem;  
   $radius: 14px;  
   $barW: 56px;  
@@ -698,7 +698,7 @@ width: 3.2em; height: 3.2em;
     color: $muted!;  
   }  
 
-  /* Screen reader only text */  
+   
   .sr-only {  
     position: absolute;  
     width: 1px;  
@@ -710,7 +710,7 @@ width: 3.2em; height: 3.2em;
     border: 0;  
   }  
 
-  /* Chart panel */  
+    
   .chart {  
     position: relative;  
     height: 22rem;  
@@ -747,7 +747,7 @@ width: 3.2em; height: 3.2em;
     user-select: none;  
   }  
 
-  /* ====== BARS ====== */  
+    
   .bar {  
     position: relative;  
     height: 0;  
@@ -790,7 +790,7 @@ width: 3.2em; height: 3.2em;
                 0 0 25px rgba(0,255,255,.18);  
   }  
 
-  /* ====== RESPONSIVE ====== */  
+   
   @media (max-width: 900px) {  
     .crypto-trans { $barW: 44px; $gap: 10px; }  
     .chart { height: 19rem; }  
