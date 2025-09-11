@@ -1015,7 +1015,7 @@ top: 10vh;
         <li class="chart-product-feature"><span class="chart-feature-icon">✓</span>0.0000023 TPP</li>
       </ul>
 
-      <div class="chart-product-price">0.0000070 NGPP</div>
+      <div class="chart-product-price"><span class="counter">0.0000070</span> NGPP</div>
       <div class="chart-product-actions">
         <button class="chart-btn chart-btn-primary" onclick=""></button>
         <button class="chart-btn chart-btn-ghost" id="chartToggleBtn"></button>
@@ -1026,7 +1026,27 @@ top: 10vh;
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    // Simple purchase handler (placeholder)
+      
+  const numb = [
+  0.0000040, 0.0000020, 0.0000010, 0.0000003,
+  0.0000050, 0.0000009, 0.0000100, 0.0000120,
+  0.0000150, 0.0000180, 0.0000200, 0.0000250,
+  0.0000300, 0.0000350, 0.0000400, 0.0000450,
+  0.0000500, 0.0000600, 0.0000700, 0.0000800,
+  0.0000900, 0.0001000, 0.0001200, 0.0001400,
+  0.0001600, 0.0001800, 0.0002000, 0.0002500,
+  0.0003000, 0.0003500
+];
+setInterval(()=>{
+    const vanNum=numb[Math.floor(Math.random()*numb.length)];
+    const resBox=document.querySelector(".counter");
+    
+   const conNum = parseInt(resBox.innerText);
+   
+   const disNum = conNum+vanNum;
+   resBox.textContent = disNum.toFixed(7);
+  },700);
+  
     function payFor(pp, price){
       alert('Purchasing ' + pp + ' PP for $' + price.toFixed(2));
       // integrate your payment flow here
@@ -1097,7 +1117,7 @@ top: 10vh;
     });
   </script>
     <script>
-        // Basic interactivity for the new UI
+        
         document.addEventListener('DOMContentLoaded', function() {
             // Menu toggle
             const menuToggle = document.getElementById('menuToggle');
