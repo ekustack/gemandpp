@@ -643,8 +643,8 @@ top: 10vh;
         <ul class="nav-menu" id="navMenu">
             <li class="nav-item"><a href="#" class="nav-link active">Dashboard</a></li>
             <li class="nav-item"><a href="https://whatsapp.com/channel/0029VbBhNCz8qIzkMMubgN00" class="nav-link">Support</a></li>
-            <li class="nav-item"><a href="#vlt">VLT free claim</a></li>
-            <li class="nav-item"><a href="#" onclick="document.querySelector('#giftBox').style.display='block';">Daily Claim</a></li>
+            <li class="nav-item"><a href="#vlt" class="nav-link">VLT free claim</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="document.querySelector('#giftBox').style.display='block';">Daily Claim</a></li>
             <li class="nav-item"><a href="#" class="nav-link" onclick="document.querySelector('#withdrawBox').style.display='block';">Account</a></li>
             <li class="nav-item"><a href="#" class="nav-link" id="logoutBtn">Logout</a></li>
         </ul>
@@ -702,6 +702,25 @@ top: 10vh;
     <!-- PP Purchase Section -->
     <h2 class="section-title">PP Packages</h2>
     <div class="products-grid">
+        <div class="product-card animate" style="animation-delay: 0.1s;">
+            <div class="product-header">
+                <div class="product-icon">💎</div>
+                <h3 class="product-title">Free Pack</h3>
+                <p class="product-subtitle">Perfect</p>
+            </div>
+            <div class="product-body">
+                <ul class="product-features">
+                    <li class="product-feature"><span class="feature-icon">✓</span>2PP</li>
+                    <li class="product-feature"><span class="feature-icon">✓</span> 0.1s delivery</li>
+                    <li class="product-feature"><span class="feature-icon">✓</span>TeamPP support</li>
+                </ul>
+                <div class="product-price">Free</div>
+                <div class="product-actions">
+                    <button class="btn btn-primary" onclick="addPoint(2);this.onclick=null;this.textContent='Claimed';window.open('https://www.revenuecpmgate.com/nsuemc2u9?key=43e79e240f2821541e42ac38827b5ba0')">Claim</button>
+                </div>
+            </div>
+        </div>
+        
         <div class="product-card animate" style="animation-delay: 0.1s;">
             <div class="product-header">
                 <div class="product-icon">💎</div>
@@ -772,11 +791,11 @@ top: 10vh;
                 <ul class="product-features">
                     <li class="product-feature"><span class="feature-icon">✓</span> 2VLT (4PP)</li>
                     <li class="product-feature"><span class="feature-icon">✓</span> 0.1s delivery</li>
-                    <li class="product-feature"><span class="feature-icon">✓</span> VLT Team support</li>
+                    <li class="product-feature"><span class="feature-icon">✓</span> TeamVLT support</li>
                 </ul>
                 <div class="product-price">Free</div>
                 <div class="product-actions">
-                    <button class="btn btn-primary" onclick="addPoint(4);this.onclick=null;this.textContent='Claimed';window.open('https://www.revenuecpmgate.com/nsuemc2u9?key=43e79e240f2821541e42ac38827b5ba0')">Claim Now</button>
+                    <button class="btn btn-primary" onclick="addPoint(4);this.onclick=null;this.textContent='Claimed';window.open('https://www.revenuecpmgate.com/nsuemc2u9?key=43e79e240f2821541e42ac38827b5ba0')">Claim</button>
                 </div>
             </div>
         </div>
